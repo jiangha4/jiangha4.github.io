@@ -39,18 +39,47 @@
         </nav>
     </div>
     <div name="profile_div">
-        <section>
+        <section name="profile_section">
             <h1>Placeholder Title</h1>
             <img src="https://www.fillmurray.com/640/360" alt="Placeholder image of Bill Murray"><br>
-            <p>Hello! My name is Haohan Jiang, but my friends call me David. I am a postgraduate student and work full time as a Software Engineer.
+            <p>
+                Hello! My name is Haohan Jiang, but my friends call me David. I am a postgraduate student and work full time as a Software Engineer.
                 I am taking this course to brush up on some web development skills as I do not have much knowledge on it and part of my job responsibilities have
                 shifted to web development. In my free time, I enjoy playing basketball and running. I am also an avid League of Legends player and have been playing for
-                over 10 years.</p>
+                over 10 years.
+            </p>
         </section>
     </div>
     <div name="experience_div"></div>
     <div name="projects_div"></div>
-    <div name="contact_form_div"></div>
+    <div name="contact_form_div">
+        <form action="" class="bg-light border mx-auto my-5 px-2 py-2">
+            <div class="row">
+                <h1 style="text-transform:uppercase">Let's Connect!</h1>
+                <div class="form-group row">
+                    <label for="contact_name" class="col-sm-4 col-form-label">Name:</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="contact_name">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="email" class="col-sm-4 col-form-label">Email:</label>
+                    <div class="col-sm-8">
+                        <input type="email" class="form-control" id="email">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="contact_message" class="col-sm-4 col-form-label">Message:</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="contact_message">
+                    </div>
+                </div>
+                <div class="row mx-auto ms-4">
+                    <button type="submit" class="btn btn-primary col-5 me-2">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
 </main>
 </body>
 </html>
