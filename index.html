@@ -4,19 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>David Jiang - Software Engineer</title>
-    <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-    />
+
     <link rel="stylesheet" href="../css/card.css" />
     <link rel="stylesheet" href="../css/profile.css" />
     <link rel="stylesheet" href="../css/index.css" />
     <link rel="stylesheet" href="../css/navbar.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    />
     <!-- script defer src="../js/index.js"></script -->
 </head>
 <body>
 <main>
+    <!-- Need to fix navbar -->
     <div class="intro_text_container">
         <div class="nav_bar_container">
             <nav class="navbar navbar-expand-lg navbar-light">
@@ -24,7 +26,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse navbar-inner" id="navbarSupportedContent">
-                    <ul class="navbar-nav center mr-auto mx-auto nav">
+                    <ul class="navbar-nav center ml-auto mx-auto nav">
                         <li class="nav-item active">
                             <a class="nav_link" href="#profile_anchor_tag">About me</a>
                         </li>
@@ -73,9 +75,12 @@
             </div>
             <div class="profile_paragraph_container">
                 <p class="profile_intro_paragraph">
-                    I am a Python/Java software engineer living in Portland, Oregon.
+                    I am a Python/Java software engineer working and living in Portland, Oregon.
                 </p>
                 <p class="profile_paragraph">
+                    Currently, working at Nike WHQ and attempting to finish my Master's in computer science at
+                    Portland State University.
+                    I graduated from the University of Toronto, St. George at the end of 2015.
                     I'm currently working for Nike creating and maintaining a variety of products.
                 </p>
             </div>
@@ -83,8 +88,11 @@
     </div>
     <div class="work_experience_container">
         <a id="work_experience_anchor_tag"></a>
-        <h1>Work Experience</h1>
-        <div class="experience_card card">
+        <div class="work_experience_left_side_content">
+            <h1>Work Experience</h1>
+        </div>
+        <div class="work_experience_right_side_content">
+            <div class="experience_card card">
             <picture>
                 <img src="img/nike.jpeg" alt="Nike logo">
             </picture>
@@ -100,7 +108,7 @@
                 </p>
             </div>
         </div>
-        <div class="experience_card card">
+            <div class="experience_card card">
             <picture>
                 <img src="img/hp.jpeg" alt="HP logo">
             </picture>
@@ -116,7 +124,7 @@
                 </p>
             </div>
         </div>
-        <div class="experience_card card">
+            <div class="experience_card card">
             <picture>
                 <img src="img/uoft.jpeg" alt="University of Toronto Logo">
             </picture>
@@ -131,6 +139,7 @@
                     qui officia deserunt mollit anim id est laborum.
                 </p>
             </div>
+        </div>
         </div>
     </div>
     <div class="projects_div">
