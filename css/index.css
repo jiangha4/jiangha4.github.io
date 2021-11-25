@@ -23,25 +23,27 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
     border-right: .15em solid orange;
     color: white;
     font-family: "Courier";
-    font-size: 100px;
     margin: 0 auto;
     white-space: nowrap;
     overflow: hidden;
     letter-spacing: .15em;
 
-    width: 80%;
+    width: auto;
+    display: inline-block;
 
-    animation-fill-mode:forwards;
-    animation: type 3.5s steps(30, end),
+
+    animation-fill-mode: forwards;
+    animation: type 3.5s steps(35, end),
                 blink-caret .75s step-end infinite;
 }
 
 @keyframes type{
-    from { width: 0 }
-    to { width: 80%}
+    from { max-width: 0 }
+    to { max-width: 100%}
 }
 
 @keyframes blink-caret {
