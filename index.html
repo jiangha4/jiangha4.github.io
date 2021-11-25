@@ -9,8 +9,9 @@
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
     />
     <!-- link rel="stylesheet" href="../styles.css" / -->
-    <link rel="stylesheet" href="../css/index.css" />
     <link rel="stylesheet" href="../css/card.css" />
+    <link rel="stylesheet" href="../css/profile.css" />
+    <link rel="stylesheet" href="../css/index.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <!-- script defer src="../js/index.js"></script -->
 </head>
@@ -39,12 +40,16 @@
             </div>
         </nav>
     </div>
-    <div class="parallax"></div>
+    <div class="intro_text_container">
+        <div class="parallax-intro parallax">
+            <h1>David Jiang</h1>
+        </div>
+    </div>
     <div class="profile_div">
         <section class="profile_section">
             <h1>About me</h1>
             <picture>
-                <img src="https://www.fillmurray.com/640/360" alt="Placeholder image of Bill Murray">
+                <img class="profile_image" src="img/profile_picture.jpeg" alt="Image of David Jiang">
             </picture>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
@@ -216,7 +221,9 @@
             </div>
         </form>
     </div>
-    <div class="parallax"></div>
+    <!-- Add links to social media in parallax bot bar -->
+    <div class="parallax-end parallax">
+    </div>
 </main>
 </body>
 </html>
