@@ -48,3 +48,8 @@
     from, to { border-color: transparent }
     50% { border-color: orange }
 }
+
+.card picture img{
+    width: 200px;
+    height: 150px;
+}
