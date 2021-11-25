@@ -27,8 +27,8 @@
 
 .profile_image{
     border-radius: 25%;
-    max-width: 200px;
-    max-height: 250px;
+    max-width: 60%;
+    max-height: 50%;
     margin: 15px;
 }
 
@@ -51,11 +51,12 @@
     position: absolute;
 }
 
-.profile_paragraph_container p{
-    font-family: PT Serif;
+.profile_paragraph, .profile_intro_line{
+    font-family: Baskerville;
+    margin-left: 15px;
 }
 
-.profile_intro_paragraph{
+.profile_intro_line, .work_profile{
     font-weight: bold;
 }
 
@@ -75,4 +76,21 @@
 .column{
     flex: 50%;
     padding: 0 4px;
+}
+
+.code_console{
+    color: purple;
+    font-style: italic;
+    font-weight: bolder;
+
+}
+
+.code_function{
+    color: gold;
+    font-weight: bold;
+}
+
+.code_keyword{
+    color: orange;
+    font-weight: bold;
 }

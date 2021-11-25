@@ -9,7 +9,7 @@
     width: auto;
 }
 
-.work_experience_left_side_content{
+.work_experience_left_side_content, .projects_right_side{
     background: blanchedalmond no-repeat left top;
     background-size: 100% 100%;
     flex: 1;
@@ -19,7 +19,7 @@
     align-items: center;
 }
 
-.work_experience_right_side_content{
+.work_experience_right_side_content, .projects_left_side{
     flex: 1;
     height: 100%;
     overflow: auto;
@@ -27,7 +27,7 @@
     background-color: ghostwhite;
 }
 
-.work_experience_container{
+.work_experience_container, .projects_div{
     display: flex;
     height: 100vh;
 }

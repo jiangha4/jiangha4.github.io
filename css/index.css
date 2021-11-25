@@ -1,5 +1,5 @@
 .parallax {
-    background-image: url("../jiangha4.github.io/img/terminal.jpeg");
+    background-image: url("../img/terminal.jpeg");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -11,7 +11,7 @@
 }
 
 .parallax-end {
-    height: 200px;
+    height: 100px;
 }
 
 .intro_text_container{
@@ -26,7 +26,7 @@
 
     border-right: .15em solid orange;
     color: black;
-    font-family: "Courier";
+    font-family: "Futura";
     font-size: xxx-large;
     font-weight: bolder;
     /* Below taken from: https://stackoverflow.com/questions/4772906/css-is-it-possible-to-add-a-black-outline-around-each-character-in-text*/

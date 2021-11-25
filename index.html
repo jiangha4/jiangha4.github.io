@@ -4,11 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>David Jiang - Software Engineer</title>
-
-    <link rel="stylesheet" href="../css/card.css" />
-    <link rel="stylesheet" href="../css/profile.css" />
-    <link rel="stylesheet" href="../css/index.css" />
-    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/card.css" />
+    <link rel="stylesheet" href="css/profile.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/contact.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <link
             rel="stylesheet"
@@ -33,6 +34,9 @@
                         <li class="nav-item">
                             <a class="nav_link" href="#work_experience_anchor_tag">Work Experience</a>
                         </li>
+                        <li class="nav-item active">
+                            <a class="nav_link" href="#profile_anchor_tag">Projects</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav_link" href="#contact_form_anchor_tag">Contact</a>
                         </li>
@@ -41,7 +45,7 @@
             </nav>
         </div>
         <div class="parallax-intro parallax">
-            <h1>~>> David Jiang</h1>
+            <h1>>> David Jiang</h1>
         </div>
     </div>
     <a id="profile_anchor_tag"></a>
@@ -55,13 +59,13 @@
                     <div class="column">
                         <!-- sort out margin widths in separate columns -->
                         <picture>
-                            <img class="image_grid_picture" src="img/sign.jpg">
-                            <img class="image_grid_picture" src="img/falls.jpg">
+                            <!--img class="image_grid_picture" src="img/sign.jpg"-->
+                            <!--img class="image_grid_picture" src="img/falls.jpg"-->
                         </picture>
                     </div>
                     <div class="column">
                         <picture>
-                            <img class="image_grid_picture" src="img/bahen.jpg">
+                            <!--img class="image_grid_picture" src="img/bahen.jpg"-->
                         </picture>
                     </div>
                 </div>
@@ -74,20 +78,29 @@
                 </picture>
             </div>
             <div class="profile_paragraph_container">
-                <p class="profile_intro_paragraph">
-                    I am a Python/Java software engineer working and living in Portland, Oregon.
-                </p>
-                <p class="profile_paragraph">
-                    Currently, working at Nike WHQ and attempting to finish my Master's in computer science at
-                    Portland State University.
-                    I graduated from the University of Toronto, St. George at the end of 2015.
-                    I'm currently working for Nike creating and maintaining a variety of products.
-                </p>
+                <p class="code_font">
+                    <span class="code_keyword">function</span>
+                    <span class="code_function">introduction</span>():</p>
+                <p>{</p>
+                <p class="profile_intro_line">Hello, I'm David Jiang</p>
+                <div class="profile_paragraph">
+                    <p class="intro_paragraph">
+                        I like solving problems and creating products that serve the customer needs.
+                        I'm currently attempting to solve some very interesting ones for the Swoosh.
+                    </p>
+
+                    <p class="work_profile">I am a Senior Software Engineer at Nike WHQ.</p>
+                    <p class="intro_paragraph">
+                        Growing up in Portland, Oregon, Nike was always a dream of mine. A couple of years ago, that dream became
+                        a reality.
+                    </p>
+                </div>
+                <p>}</p>
             </div>
         </section>
     </div>
+    <a id="work_experience_anchor_tag"></a>
     <div class="work_experience_container">
-        <a id="work_experience_anchor_tag"></a>
         <div class="work_experience_left_side_content">
             <h1>Work Experience</h1>
         </div>
@@ -142,9 +155,11 @@
         </div>
         </div>
     </div>
+    <a id="projects_anchor_tag"></a>
     <div class="projects_div">
-        <div class="projects_container">
-            <div class="experience_card card">
+        <div class="projects_right_side">
+            <div class="projects_container">
+                <div class="experience_card card">
                 <picture>
                     <img src="https://via.placeholder.com/150" alt="Placeholder">
                 </picture>
@@ -159,7 +174,7 @@
                     </p>
                 </div>
             </div>
-            <div class="experience_card card">
+                <div class="experience_card card">
                 <picture>
                     <img src="https://via.placeholder.com/150" alt="Placeholder">
                 </picture>
@@ -174,27 +189,16 @@
                     </p>
                 </div>
             </div>
-        </div>
-        <div class="experience_card card">
-            <picture>
-                <img src="https://via.placeholder.com/150" alt="Placeholder">
-            </picture>
-            <div class="experience_text">
-                <h2>Python IRC Chat Server and Client</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                    qui officia deserunt mollit anim id est laborum.
-                </p>
             </div>
+        </div>
+        <div class="projects_left_side">
+            <h1>Projects</h1>
         </div>
     </div>
     </div>
     <a id="contact_form_anchor_tag"></a>
     <div class="contact_form_div">
-        <h1 style="text-transform:uppercase">Let's Connect!</h1>
+        <h1>Let's Connect!</h1>
         <form action="" class="bg-light border mx-auto my-5 px-2 py-2">
             <div class="row">
                 <div class="form-group row">
@@ -215,8 +219,8 @@
                         <input type="text" class="form-control" id="contact_message">
                     </div>
                 </div>
-                <div class="row mx-auto ms-4">
-                    <button type="submit" class="btn btn-primary col-5 me-2">Submit</button>
+                <div class="row mx-auto">
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </div>
         </form>
