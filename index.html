@@ -12,29 +12,30 @@
     <link rel="stylesheet" href="../css/card.css" />
     <link rel="stylesheet" href="../css/profile.css" />
     <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/navbar.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <!-- script defer src="../js/index.js"></script -->
 </head>
 <body>
 <main>
-    <div class="nav_bar_div">
+    <div class="nav_bar_container">
         <!-- Check if top is sticky -->
-        <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light center">
-            <a class="navbar-brand" href="#">Navbar</a>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse navbar-inner" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto nav">
+                <ul class="navbar-nav center mr-auto mx-auto nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="#profile_anchor_tag">About me</a>
                     </li>
+                    <p class="dividers"> / </p>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="#work_experience_anchor_tag">Work Experience</a>
                     </li>
+                    <p class="dividers"> / </p>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
+                        <a class="nav-link" href="#contact_form_anchor_tag">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -45,6 +46,7 @@
             <h1>David Jiang</h1>
         </div>
     </div>
+    <a id="profile_anchor_tag"></a>
     <div class="profile_div">
         <section class="profile_section">
             <h1>About me</h1>
@@ -61,6 +63,7 @@
         </section>
     </div>
     <div class="work_experience_container">
+        <a id="work_experience_anchor_tag"></a>
         <h1>Work Experience</h1>
         <div class="experience_card card">
             <picture>
@@ -158,6 +161,7 @@
         </div>
     </div>
     </div>
+    <a id="contact_form_anchor_tag"></a>
     <div class="contact_form_div">
         <h1 style="text-transform:uppercase">Let's Connect!</h1>
         <form action="" class="bg-light border mx-auto my-5 px-2 py-2">
