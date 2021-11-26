@@ -1,12 +1,8 @@
 .card{
     border: 0.5rem solid black;
-    display: flex;
-    flex-direction: row;
     justify-content: space-between;
     margin: 5px;
     padding: 5px;
-    height: auto;
-    width: auto;
 }
 
 .work_experience_left_side_content, .projects_right_side{
@@ -25,4 +21,12 @@
     overflow: auto;
     padding: 10px;
     background-color: ghostwhite;
+}
+
+.company_container{
+    display: flex;
+}
+
+.company_row{
+    width: 50%;
 }
