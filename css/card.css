@@ -26,8 +26,3 @@
     padding: 10px;
     background-color: ghostwhite;
 }
-
-.work_experience_container, .projects_div{
-    display: flex;
-    height: 100vh;
-}
