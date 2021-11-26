@@ -11,7 +11,21 @@
 }
 
 .parallax-end {
-    height: 100px;
+    height: 75px;
+}
+
+.fa {
+    margin-top: 10px;
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-decoration: none;
+    border-radius: 50%;
+    position: relative;
+    float: right;
+    background: #3B5998;
+    color: white;
+    vertical-align: center;
 }
 
 .intro_text_container{
