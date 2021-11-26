@@ -38,7 +38,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
-    border-right: .15em solid orange;
     color: black;
     font-family: "Futura";
     font-size: xxx-large;
@@ -53,10 +52,13 @@
     width: auto;
     display: inline-flex;
     flex-wrap: wrap;
+}
 
+.intro_animation{
+    border-right: .15em solid orange;
     animation-fill-mode: forwards;
     animation: type 3.5s steps(35, end),
-                blink-caret .75s step-end infinite;
+    blink-caret .75s step-end infinite;
 }
 
 @keyframes type{
