@@ -30,6 +30,14 @@
     font-weight: bold;
 }
 
+.links{
+    text-decoration: none;
+}
+
+.links:hover{
+    text-decoration: underline;
+}
+
 /* TODO: Adjust button colors*/
 .topBtn{
     width: 50px;
@@ -46,4 +54,6 @@
     background-color: red;
     border: 2px solid red;
 }
+
+
 

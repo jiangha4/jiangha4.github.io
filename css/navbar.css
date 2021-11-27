@@ -3,14 +3,7 @@
     margin: 0;
 }
 
-.nav_link{
-    text-decoration: none;
-}
-
-.nav_link:hover{
-    text-decoration: underline;
-}
-
+/* TODO: Better hover on nav link */
 .nav_link, .nav_link:hover{
     color: black;
     font-family: var(--navbar_font);

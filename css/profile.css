@@ -5,14 +5,17 @@
 
 .profile_image{
     border-radius: 25%;
-    max-width: 60%;
-    max-height: 50%;
+    max-width: 55%;
+    max-height: 45%;
     margin: 15px;
 }
 
-.profile_paragraph, .profile_intro_line{
-    font-family: var(--body_font);
-    margin-left: 15px;
+.profile_paragraph_container{
+    margin: 15px;
+}
+
+.profile_paragraph, .indent{
+    margin: 15px;
 }
 
 .profile_intro_line, .work_profile{

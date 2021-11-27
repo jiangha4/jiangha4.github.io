@@ -58,17 +58,16 @@
 /* Split panes*/
 .color{
     background: blanchedalmond no-repeat left top;
-    background-size: 100% 100%;
-    flex: 1;
     height: 100%;
     display: flex;
+    width: 35%;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
 .content{
-    flex: 1;
+    width: 65%;
     height: 100%;
     overflow: auto;
     background-color: ghostwhite;
