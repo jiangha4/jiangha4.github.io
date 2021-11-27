@@ -1,21 +1,3 @@
-.color_section{
-    background: blanchedalmond no-repeat left top;
-    background-size: 100% 100%;
-    flex: 1;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.profile_section{
-    flex: 1;
-    height: 100%;
-    overflow: auto;
-    padding: 10px;
-    background-color: ghostwhite;
-}
-
 .profile_image_container{
     text-align: center;
 }
@@ -25,16 +7,6 @@
     max-width: 60%;
     max-height: 50%;
     margin: 15px;
-}
-
-.color_section h1{
-    font-family: Superclarendon;
-    font-size: xxx-large;
-    font-weight: bold;
-    color: white;
-    z-index: 10;
-    /* Below taken from: https://stackoverflow.com/questions/4772906/css-is-it-possible-to-add-a-black-outline-around-each-character-in-text*/
-    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
 
 .profile_title_container{
@@ -47,7 +19,7 @@
 }
 
 .profile_paragraph, .profile_intro_line{
-    font-family: Baskerville;
+    font-family: var(--body_font);
     margin-left: 15px;
 }
 

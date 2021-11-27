@@ -1,3 +1,4 @@
+/* Parallax Intro CSS*/
 .parallax {
     background-image: url("../img/terminal.jpeg");
     background-attachment: fixed;
@@ -10,28 +11,6 @@
     height: 100vh;
 }
 
-.parallax-end {
-    height: 75px;
-}
-
-.fa {
-    margin-top: 10px;
-    padding: 20px;
-    font-size: 30px;
-    width: 50px;
-    text-decoration: none;
-    border-radius: 50%;
-    position: relative;
-    float: right;
-    background: #3B5998;
-    color: white;
-    vertical-align: center;
-}
-
-.intro_text_container{
-    position: relative;
-    text-align: center;
-}
 .parallax-intro h1{
     position: absolute;
     top: 50%;
@@ -39,11 +18,10 @@
     transform: translate(-50%, -50%);
 
     color: black;
-    font-family: "Futura";
+    font-family: var(--title_font);
     font-size: xxx-large;
     font-weight: bolder;
-    /* Below taken from: https://stackoverflow.com/questions/4772906/css-is-it-possible-to-add-a-black-outline-around-each-character-in-text*/
-    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+    text-shadow: var(--shadow);
     margin: 0 auto;
     white-space: nowrap;
     overflow: hidden;
@@ -54,6 +32,17 @@
     flex-wrap: wrap;
 }
 
+/* Parallax Footer*/
+.parallax-end {
+    height: 75px;
+}
+
+.intro_text_container{
+    position: relative;
+    text-align: center;
+}
+
+/* Intro animation CSS*/
 .intro_animation{
     border-right: .15em solid orange;
     animation-fill-mode: forwards;
@@ -71,7 +60,36 @@
     50% { border-color: orange }
 }
 
-.card picture img{
-    width: 200px;
-    height: 150px;
+/* Split panes*/
+.color{
+    background: blanchedalmond no-repeat left top;
+    background-size: 100% 100%;
+    flex: 1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content{
+    flex: 1;
+    height: 100%;
+    overflow: auto;
+    padding: 10px;
+    background-color: ghostwhite;
+}
+
+/* CSS for footer social media links*/
+.fa {
+    margin-top: 10px;
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-decoration: none;
+    border-radius: 50%;
+    position: relative;
+    float: right;
+    background: #3B5998;
+    color: white;
+    vertical-align: center;
 }

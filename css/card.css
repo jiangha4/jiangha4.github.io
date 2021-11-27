@@ -1,30 +1,34 @@
 .card{
     border: 0.5rem solid black;
     justify-content: space-between;
-    margin: 5px;
+    margin: 10px;
     padding: 5px;
+    opacity: 0;
+    transform: scale(1.2);
 }
 
-.work_experience_left_side_content, .projects_right_side{
-    background: blanchedalmond no-repeat left top;
-    background-size: 100% 100%;
-    flex: 1;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.card picture img{
+    width: 200px;
+    height: 150px;
 }
 
-.work_experience_right_side_content, .projects_left_side{
-    flex: 1;
-    height: 100%;
-    overflow: auto;
-    padding: 10px;
-    background-color: ghostwhite;
+@media (prefers-reduced-motion: no-preference) {
+    .card {
+        transition: opacity 1.5s ease, transform 1.5s ease;
+    }
+}
+
+.card-transition {
+    opacity: 1;
+    transform: none;
 }
 
 .company_container{
     display: flex;
+}
+
+.company_container, .experience_container{
+    margin: 10px;
 }
 
 .company_row{

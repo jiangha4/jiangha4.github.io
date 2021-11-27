@@ -1,4 +1,23 @@
+:root{
+    --title_font: "Montserrat";
+    --navbar_font: "Courier New";
+    --body_font: "Baskerville";
+
+    /* Below taken from: https://stackoverflow.com/questions/4772906/css-is-it-possible-to-add-a-black-outline-around-each-character-in-text*/
+    --shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+}
+
 .section_container{
     display: flex;
     height: 100vh;
+}
+
+.paragraph{
+    font-family: var(--body_font);
+}
+
+.profile_title_container,
+.work_experience_left_side_content,
+.projects_left_container{
+    font-family: var(--title_font);
 }
