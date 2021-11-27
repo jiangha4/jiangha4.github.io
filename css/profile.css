@@ -9,15 +9,6 @@
     margin: 15px;
 }
 
-.profile_title_container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-}
-
 .profile_paragraph, .profile_intro_line{
     font-family: var(--body_font);
     margin-left: 15px;
@@ -27,24 +18,7 @@
     font-weight: bold;
 }
 
-.image_grid_picture{
-    width: 90%;
-    margin: 20px;
-    border-style: solid;
-    border-radius: 2%;
-}
-
-.row{
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 4px;
-}
-
-.column{
-    flex: 50%;
-    padding: 0 4px;
-}
-
+/* Profile intro text */
 .code_console{
     color: purple;
     font-style: italic;

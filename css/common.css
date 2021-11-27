@@ -25,3 +25,14 @@
 .projects_left_container{
     font-family: var(--title_font);
 }
+
+.topBtn{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: black;
+    border: 2px solid black;
+    cursor: pointer;
+    color: white;
+    font-size: xx-large;
+}
