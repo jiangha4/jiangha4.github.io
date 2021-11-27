@@ -1,3 +1,4 @@
+/* Profile */
 .profile_image_container{
     text-align: center;
 }
@@ -18,7 +19,6 @@
     font-weight: bold;
 }
 
-
 /* Profile intro text */
 .code_console{
     color: purple;
@@ -34,9 +34,5 @@
 
 .code_keyword{
     color: orange;
-    font-weight: bold;
-}
-
-.work_text{
     font-weight: bold;
 }

@@ -37,11 +37,6 @@
     height: 75px;
 }
 
-.intro_text_container{
-    position: relative;
-    text-align: center;
-}
-
 /* Intro animation CSS*/
 .intro_animation{
     border-right: .15em solid orange;
@@ -77,6 +72,12 @@
     height: 100%;
     overflow: auto;
     background-color: ghostwhite;
+}
+
+/* Section Titles*/
+.section_header h1{
+    font-family: var(--title_font);
+    font-weight: bolder;
 }
 
 

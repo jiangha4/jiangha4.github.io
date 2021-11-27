@@ -16,7 +16,6 @@
     font-family: var(--body_font);
 }
 
-
 .profile_title_container,
 .work_experience_left_side_content,
 .projects_left_container{
@@ -25,6 +24,10 @@
 
 .color div{
     margin: 30px;
+}
+
+.bold{
+    font-weight: bold;
 }
 
 /* TODO: Adjust button colors*/
@@ -37,5 +40,10 @@
     cursor: pointer;
     color: white;
     font-size: xx-large;
+}
+
+.topBtn:hover{
+    background-color: red;
+    border: 2px solid red;
 }
 
