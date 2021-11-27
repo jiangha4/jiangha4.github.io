@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/navbar.css" />
     <link rel="stylesheet" href="css/contact.css" />
+    <link rel="stylesheet" href="css/form.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
     <!-- Icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -135,7 +136,7 @@
                                      alt="'NIKE' by absoluteSteven is licensed with CC BY-NC-ND 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-nd/2.0/">
                             </picture>
                         </div>
-                        <div class="company_row">
+                        <div class="company_row local_header">
                             <h2>Nike</h2>
                             <h4>Senior Software Engineer II</h4>
                         </div>
@@ -163,7 +164,7 @@
                                      alt="'HP Logo (R)Evolution' by michael_reuter is licensed with CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/">
                             </picture>
                         </div>
-                        <div class="company_row">
+                        <div class="company_row local_header">
                             <h2>Hewlett Packard</h2>
                             <h4>Software Engineer I</h4>
                         </div>
@@ -180,7 +181,7 @@
                 <!-- Cards 3 -->
                 <div class="card">
                     <div class="company_container">
-                        <div class="company_row">
+                        <div class="company_row local_header">
                             <picture>
                                 <img src="img/uoft.jpeg"
                                      alt="University of Toronto Logo">
@@ -197,8 +198,6 @@
                             architecture course. I instructed labs for Altera FPGA boards and helped students prepare
                             for final projects.
                         </p>
-
-
                     </div>
                 </div>
             </div>
@@ -251,42 +250,46 @@
     <!-- Contact Form Section -->
     <!-- TODO: Add background to contact form and fix css-->
     <!-- TODO: Add JS to email me -->
-    <!-- TODO: Add submit button -->
     <div class="contact_form_div">
-        <form class="rounded mb-4">
-            <!-- Contact form header -->
-            <a id="contact_form_anchor_tag"></a>
-            <h2 class="font-weight-bold text-center my-4">Let's Connect!</h2>
+        <div class="form_container border rounded">
+            <form class="rounded mb-4">
+                <!-- Contact form header -->
+                <a id="contact_form_anchor_tag"></a>
+                <h2 class="font-weight-bold text-center my-4">Let's Connect!</h2>
 
-            <!-- Contact form body -->
-            <div class="row mb-4">
-                <div class="col">
-                    <div class="form_group">
-                        <input type="text" class="form-control" placeholder="Name">
+                <!-- Contact form body -->
+                <div class="row mb-4">
+                    <div class="col">
+                        <div class="form_group">
+                            <input type="text" class="form-control" placeholder="Name">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form_group">
+                            <input type="email" class="form-control" placeholder="Email">
+                        </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="form_group">
-                        <input type="email" class="form-control" placeholder="Email">
+                <div class="row mb-4">
+                    <div class="col">
+                        <div class="form_group">
+                            <input type="text" class="form-control" placeholder="Subject">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row mb-4">
-                <div class="col">
-                    <div class="form_group">
-                        <input type="text" class="form-control" placeholder="Subject">
+                <div class="row mb-4">
+                    <div class="col">
+                        <div class="form_group">
+                            <textarea class="form-control" rows="5" placeholder="Message"></textarea>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row mb-4">
-                <div class="col">
-                    <div class="form_group">
-                        <textarea class="form-control" rows="5" placeholder="Message"></textarea>
-                    </div>
+                <div class="col-6">
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
-            </div>
-        </form>
-    </div>
+            </form>
+        </div>
+        </div>
     <!-- Add links to social media in parallax bot bar -->
     <div class="parallax-end parallax">
         <!-- TODO: Revisit colors on social media buttons -->
