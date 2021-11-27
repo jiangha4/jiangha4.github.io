@@ -1,9 +1,13 @@
 .form_container{
-    width: 50%;
+    width: 80%;
     margin: auto;
-    padding: 5px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_content_container{
+    display: flex;
 }
 
 .btn {
