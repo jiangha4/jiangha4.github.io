@@ -66,11 +66,10 @@
     background: orange;
 }
 
-.content{
+.content {
     width: 65%;
     height: 100%;
     overflow: auto;
-    background-color: ghostwhite;
 }
 
 /* CSS for footer social media links*/

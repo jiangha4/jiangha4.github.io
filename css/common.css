@@ -5,11 +5,42 @@
 
     /* Below taken from: https://stackoverflow.com/questions/4772906/css-is-it-possible-to-add-a-black-outline-around-each-character-in-text*/
     --shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+
+    /* Color ref: http://www.zovirl.com/2011/07/22/solarized_cheat_sheet/*/
+    --solarized_dark: rgb(0,43, 54);
+    --solarized_light: rgb(253, 246, 227);
+    --solarized_base: rgb(238, 232, 213);
+    --solarized_base2: rgb(253, 246, 227);
+}
+
+.solarized-base2{
+    background-color: var(--solarized_base2);
+}
+
+.solarized-base{
+    background-color: var(--solarized_base);
+}
+
+.solarized-light{
+    background-color: var(--solarized_light);
+}
+
+.solarized-dark{
+    background-color: var(--solarized_dark);
+}
+
+.ghostwhite{
+    background-color: ghostwhite;
 }
 
 .section_container{
     display: flex;
     height: 100vh;
+}
+
+.half_section_container{
+    display: flex;
+    height: 50vh;
 }
 
 .paragraph{
