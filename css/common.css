@@ -16,6 +16,10 @@
     font-family: var(--body_font);
 }
 
+.x-large-font{
+    font-size: x-large;
+}
+
 .profile_title_container,
 .work_experience_left_side_content,
 .projects_left_container{

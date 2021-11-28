@@ -57,13 +57,13 @@
 
 /* Split panes*/
 .color{
-    background: blanchedalmond no-repeat left top;
     height: 100%;
     display: flex;
     width: 35%;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background: orange;
 }
 
 .content{
