@@ -1,9 +1,11 @@
+/* Function Up button calls to scroll to top of page */
 function topOfPage() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
-function linkToGitHub(url){
+/* Function open a new tab to a url*/
+function linkTo(url){
     window.open(url, "_blank");
 }
 

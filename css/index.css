@@ -73,13 +73,6 @@
     background-color: ghostwhite;
 }
 
-/* Section Titles*/
-.section_header h1{
-    font-family: var(--title_font);
-    font-weight: bolder;
-}
-
-
 /* CSS for footer social media links*/
 .fa {
     margin-top: 8px;
