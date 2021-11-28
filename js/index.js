@@ -3,6 +3,10 @@ function topOfPage() {
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
+function linkToGitHub(url){
+    window.open(url, "_blank");
+}
+
 // Function to replay the intro animation when viewport is back on screen
 const observer_intro = new IntersectionObserver(entries => {
     entries.forEach(entry => {

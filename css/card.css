@@ -1,6 +1,7 @@
 .card{
     border: 0.5rem solid black;
     justify-content: space-between;
+    transition: opacity 1.5s ease, transform 1.5s ease;
 }
 
 .work_card, .project_card{
@@ -13,10 +14,6 @@
 .card picture img{
     width: 250px;
     height: 150px;
-}
-
-.card {
-    transition: opacity 1.5s ease, transform 1.5s ease;
 }
 
 .card-transition {
@@ -34,4 +31,19 @@
 
 .company_row{
     width: 50%;
+}
+
+.social{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-image: url("../img/github.jpeg");
+    background-size: contain;
+}
+
+.social:hover{
+    cursor: pointer;
+    opacity: 0.6;
+    width: 40px;
+    height: 40px;
 }
