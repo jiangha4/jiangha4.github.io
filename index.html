@@ -62,7 +62,6 @@
                 <p class="code_font">
                     <span class="code_keyword">function</span>
                     <span class="code_function">introduction</span>():</p>
-                <!-- TODO: remove or fix fade in and out -->
                 <p class="bold paragraph indent">Hello, I'm David Jiang</p>
                 <div class="profile_paragraph">
                     <p class="paragraph">
@@ -107,9 +106,9 @@
 
         <!-- Right side of screen -->
         <div class="content work_experience_content">
-            <div class="card_container">
+            <div class="card_container border">
                 <!-- Card 1 -->
-                <div class="card">
+                <div class="card work_card">
                     <div class="company_container">
                         <div class="company_row">
                             <picture>
@@ -124,21 +123,32 @@
                         </div>
                     </div>
                     <div class="experience_container">
-                        Cerberus Software Engineer: Springboot Java Application to store secrets for Nike developers
-                        Cloud application deployed in to multi-regions in AWS
-                        CI/CD using Jenkins and Github
-                        \item Produced golden AMIs (Amazon Machine Images) and containers for Nike engineers available in both AWS Global and AWS China using Packer
-                        \item Developed cloud infrastructure and helped to established DevOps CI/CD best practice patterns for Nike engineers
-                        \item Developed tooling and cloud infrastructure for CI/CD in AWS Global and AWS China to support Nike
-                        digital commerce
-                        \item Provided support to Nike developers for debugging build and deployment issues
-                        \item Python developer for internal platform tools used for baking, observability, and internal network connectivity
+                        <p class="paragraph">
+                            <span class="bold">Highlights:</span>
+                            <li class="paragraph">Development, maintenance, and operations of Cerberus and Referee in AWS</li>
+                            <li class="paragraph">Creation and maintenance of Ubuntu 1804 golden Amazon Machine Images</li>
+                            <li class="paragraph">Creation and maintenance of a variety of deploy time container images</li>
+                            <li class="paragraph">Development and maintenance of reusable AWS cloud infrastructure in both AWS Global and AWS China</li>
+                        </p>
+                        <p class="paragraph">
+                            <span class="bold">Summary:</span>
+                            At Nike, I help maintain and develop a wide variety of different cloud first products
+                            forming a platform to serve and enable cloud CI/CD in both AWS Global and AWS China.
+                        </p>
+                        <p class="paragraph">
+                            <span class="bold">Languages:</span>
+                            Python, Groovy, Java, Bash, Go
+                        </p>
+                        <p class="paragraph">
+                            <span class="bold">Deployment Stack:</span>
+                            Git, Jenkins, Packer, Puppet, Ansible, AWS
+                        </p>
                     </div>
                 </div>
 
                 <!-- Card 2 -->
 
-                <div class="card">
+                <div class="card work_card">
                     <div class="company_container">
                         <div class="company_row">
                             <picture>
@@ -176,12 +186,13 @@
                         </p>
                         <p class="paragraph">
                             <span class="bold">Technology Stack:</span>
+                            Git, Python Wheel, Nginx, Requests, Swagger
                         </p>
                     </div>
                 </div>
 
                 <!-- Cards 3 -->
-                <div class="card">
+                <div class="card work_card">
                     <div class="company_container">
                         <div class="company_row local_header">
                             <picture>
@@ -224,14 +235,15 @@
         </div>
     </div>
 
+    <!-- TODO: Add links to github to projects-->
     <!-- Projects Section -->
     <a id="projects_anchor_tag"></a>
     <div class="projects_div section_container">
         <div class="content projects_content">
-            <div class="projects_container">
+            <div class="projects_container border">
 
                 <!-- Project Card 1-->
-                <div class="card">
+                <div class="card project_card">
                     <div class="company_container">
                         <div class="company_row">
                             <picture>
@@ -247,8 +259,16 @@
                     <div class="experience_container">
                         <p class="paragraph">
                             <span class="bold">Cerberus</span> is an open source cloud first microservice used as a secrets
-                            manager for deploy and run time secrets management. Cerberus is built using a Java Springboot
-                            framework and deployed to AWS.
+                            manager for deploy and run time secrets management. Cerberus can be used to store both key value
+                            pair secrets and files such as pem files.
+
+                            Cerberus is built using a Java Springboot framework and deployed to AWS. Along with a UI,
+                            Cerberus also comes with a multiple clients to programmatically interface with Cerberus.
+
+                        </p>
+                        <p class="paragraph">
+                            Cerberus is deployed in multiple regions within AWS to allow for a hot swap in case of a main
+                            region failover event.
                         </p>
                         <p class="paragraph">
 
@@ -257,7 +277,7 @@
                 </div>
 
                 <!-- Project Card 2-->
-                <div class="card">
+                <div class="card project_card">
                     <div class="company_container">
                         <div class="company_row">
                             <picture>
@@ -276,6 +296,27 @@
                             Spinnaker's
                             <a class="links" href="https://github.com/spinnaker/kayenta">Kayenta</a>.
                         </p>
+                        <p class="paragraph">
+                            Canary deployments
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project Card 3-->
+                <div class="card project_card">
+                    <div class="company_container">
+                        <div class="company_row local_header">
+                            <h3>Apollo</h3>
+                            <h5>IRC Server and Client</h5>
+                        </div>
+                    </div>
+                    <div class="experience_container">
+                        <p class="paragraph">
+                            Apollo was built as a final project for a computer networking class.
+
+                            Apollo is a fully functional, RFC compliant IRC server and client. It was
+                            written completely in Python and runs through a command line.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -293,9 +334,9 @@
     </div>
 
     <!-- Contact Form Section -->
-    <!-- TODO: Add background to contact form and fix css-->
     <!-- TODO: Add JS to email me -->
     <!-- TODO: Add hover effect on button -->
+    <!-- TODO: Fix missing form label -->
     <a id="contact_form_anchor_tag"></a>
     <div class="contact_form_div section_container">
         <div class="color">

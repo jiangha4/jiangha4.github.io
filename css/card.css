@@ -1,10 +1,13 @@
 .card{
     border: 0.5rem solid black;
     justify-content: space-between;
-    margin: 10px;
-    padding: 5px;
+}
+
+.work_card, .project_card{
     opacity: 0;
     transform: scale(1.2);
+    margin: 10px;
+    padding: 5px;
 }
 
 .card picture img{
@@ -12,10 +15,8 @@
     height: 150px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .card {
-        transition: opacity 1.5s ease, transform 1.5s ease;
-    }
+.card {
+    transition: opacity 1.5s ease, transform 1.5s ease;
 }
 
 .card-transition {

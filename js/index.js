@@ -1,4 +1,3 @@
-// When the user clicks on the button, scroll to the top of the document
 function topOfPage() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
@@ -20,23 +19,27 @@ const observer_intro = new IntersectionObserver(entries => {
 
 observer_intro.observe(document.querySelector('.parallax-intro'));
 
+// Fade in for cards
+const work_card = document.querySelectorAll('.work_card');
+const project_card = document.querySelectorAll('.project_card');
 
+function observeCards(cards, html_class){
+    cards.forEach(card => {
+        card.classList.remove('card-transition');
 
+        let observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    card.classList.add('card-transition');
+                    return;
+                }
 
-// Remove the transition class
-const square = document.querySelectorAll('.card');
-square.forEach(card => {
-    card.classList.remove('card-transition');
-
-    const observer_work = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                card.classList.add('card-transition');
-                return;
-            }
-
-            card.classList.remove('card-transition');
+                card.classList.remove('card-transition');
+            });
         });
-    });
-    observer_work.observe(document.querySelector('.card_container'));
-})
+        observer.observe(document.querySelector(html_class));
+    })
+}
+
+observeCards(work_card, ".card_container")
+observeCards(project_card, ".projects_container")
