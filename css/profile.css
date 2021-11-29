@@ -21,21 +21,3 @@
 .profile_intro_line, .work_profile{
     font-weight: bold;
 }
-
-/* Profile intro text */
-.code_console{
-    color: purple;
-    font-style: italic;
-    font-weight: bolder;
-
-}
-
-.code_function{
-    color: gold;
-    font-weight: bold;
-}
-
-.code_keyword{
-    color: orange;
-    font-weight: bold;
-}

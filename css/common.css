@@ -11,6 +11,8 @@
     --solarized_light: rgb(253, 246, 227);
     --solarized_base: rgb(238, 232, 213);
     --solarized_base2: rgb(253, 246, 227);
+    --solarized_orange: rgb(203, 75, 22);
+    --solarized_yellow: rgb(181, 137, 0);
 }
 
 .solarized-base2{
@@ -40,7 +42,7 @@
 
 .half_section_container{
     display: flex;
-    height: 50vh;
+    height: 70vh;
 }
 
 .paragraph{
@@ -91,5 +93,12 @@
     opacity: 0.6;
 }
 
+/* No display text for social media links*/
+.no-display{
+    opacity: 0;
+    position: absolute;
+    margin-top: -100px;
+    margin-left: -100px;
+}
 
 

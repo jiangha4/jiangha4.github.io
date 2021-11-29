@@ -59,9 +59,6 @@
                 </picture>
             </div>
             <div class="profile_paragraph_container">
-                <p class="code_font">
-                    <span class="code_keyword">function</span>
-                    <span class="code_function">introduction</span>():</p>
                 <p class="bold paragraph indent x-large-font">Hello, I'm David Jiang</p>
                 <div class="profile_paragraph x-large-font">
                     <p class="paragraph">
@@ -336,7 +333,6 @@
     </div>
 
     <!-- Contact Form Section -->
-    <!-- TODO: Fix missing form label -->
     <a id="contact_form_anchor_tag"></a>
     <div class="contact_form_div half_section_container">
         <div class="color">
@@ -355,26 +351,30 @@
                     <div class="row mb-4">
                         <div class="col">
                             <div class="form_group">
-                                <input type="text" class="form-control" placeholder="Name">
+                                <label class="paragraph bold" for="name">Name:</label>
+                                <input id="name" type="text" class="form-control" placeholder="Name">
                             </div>
                         </div>
                         <div class="col">
                             <div class="form_group">
-                                <input type="email" class="form-control" placeholder="Email">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mb-4">
-                        <div class="col">
-                            <div class="form_group">
-                                <input type="text" class="form-control" placeholder="Subject">
+                                <label class="paragraph bold" for="email">Email:</label>
+                                <input id="email" type="email" class="form-control" placeholder="Email">
                             </div>
                         </div>
                     </div>
                     <div class="row mb-4">
                         <div class="col">
                             <div class="form_group">
-                                <textarea class="form-control" rows="5" placeholder="Message"></textarea>
+                                <label class="paragraph bold" for="subject">Subject:</label>
+                                <input id="subject" type="text" class="form-control" placeholder="Subject">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <div class="form_group">
+                                <label class="paragraph bold" for="message">Message:</label>
+                                <textarea id="message" class="form-control" rows="5" placeholder="Message"></textarea>
                             </div>
                         </div>
                     </div>
@@ -389,8 +389,12 @@
     <!-- Footer -->
     <footer>
         <div class="parallax-end parallax">
-            <a href="https://www.linkedin.com/in/david-jiang-48773b96" class="fa fa-linkedin"></a>
-            <a href="https://github.com/jiangha4" class="fa fa-github"></a>
+            <a href="https://www.linkedin.com/in/david-jiang-48773b96" class="fa fa-linkedin">
+                <span class="no-display">LinkedIn Link</span>
+            </a>
+            <a href="https://github.com/jiangha4" class="fa fa-github">
+                <span class="no-display">Github Link</span>
+            </a>
         </div>
     </footer>
 </main>
