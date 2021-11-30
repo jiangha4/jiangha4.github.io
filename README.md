@@ -1,7 +1,5 @@
-References:
+## Personal Website source code 
 
-1. Parallax Image: https://i.redd.it/yw3pd1lgiyyz.jpg Credit: u/cdor402
-2. Profile Photo: Taken by me
-3. Nike Logo: https://www.google.com/search?q=nike+logo&rlz=1C5GCEM_enUS977US978&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiU7dD1rLL0AhWhJTQIHYV0CJUQ_AUoAXoECAEQAw&biw=1646&bih=856&dpr=2#imgrc=t80JTFTSDbrm6M
-4. HP Logo: https://www.google.com/search?q=hp+logo&rlz=1C5GCEM_enUS977US978&tbm=isch&source=iu&ictx=1&fir=X45NDPW11qIwlM%252CE-yptbmdK_IpNM%252C_%253BqU5jt639m2T9YM%252CnL0THMtWvbX4QM%252C_%253BWOmg5zYSF8XY2M%252CxKuPYyR7DipgmM%252C_%253BNQDx7R_O30wFbM%252CGaKD6OjsRh01uM%252C_%253B3HQkVY1PbikaRM%252Chg7gO2v0BCAI4M%252C_%253B87kUx3Y-1EREBM%252CE-yptbmdK_IpNM%252C_%253BRUthVpTh_dNMLM%252CxKuPYyR7DipgmM%252C_%253B4TLpVUpNuV36dM%252C9SgEwmcKEeGGAM%252C_%253B0tX2M_w8vqdnfM%252CE-yptbmdK_IpNM%252C_%253BKeZ-Q91Dl3IclM%252CQdwQ1THeSrsrbM%252C_%253Bg03kMB0HnZrm4M%252CGI2FO5lZsWy0gM%252C_%253BcEJws5tTJvO8UM%252CnwRujc07VSFokM%252C_%253BcyRwkGMsy2iq8M%252CucCuu0CNyuucHM%252C_%253BGbHgJutJC5kYRM%252CKhkMeigEiPKHlM%252C_&vet=1&usg=AI4_-kQaRjtxCbyjh9wR2q8fpcQYzO2SaA&sa=X&ved=2ahUKEwjTk_SWrrL0AhWhMX0KHTDQCOMQ9QF6BAgjEAE#imgrc=g03kMB0HnZrm4M
-5. University of Toronto Logo: https://www.google.com/search?q=university+of+toronto+logo&rlz=1C5GCEM_enUS977US978&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiUitr4rrL0AhWzJjQIHdSwD5sQ_AUoAXoECAEQAw&biw=1698&bih=824&dpr=2#imgrc=56MEa435NrJZgM
+Built using HTML, CSS, and Javascript. 
+
+Deployed on github pages. 
