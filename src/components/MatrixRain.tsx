@@ -6,6 +6,8 @@ import styles from './MatrixRain.module.css';
 const RAIN_RGB = '61, 204, 122';
 const DROP_STEP = 0.2;
 const FADE_ALPHA = 0.025;
+const FIELD_CELL_ALPHA = 0.1;
+const FIELD_CELL_FILL = 0.2;
 
 export function MatrixRain() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -36,25 +38,30 @@ export function MatrixRain() {
       drops = Array.from({ length: columns }, () => Math.random() * rows);
     };
 
-    const drawStaticField = () => {
-      ctx.fillStyle = '#050805';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+    const drawSparseGlyphField = () => {
       ctx.font = `${fontSize}px "IBM Plex Mono", monospace`;
-      const alpha = 0.1;
-      for (let x = 0; x < columns; x++) {
-        for (let y = 0; y < canvas.height / fontSize; y++) {
-          if (Math.random() > 0.7) {
+      for (let col = 0; col < columns; col++) {
+        for (let row = 0; row < rows; row++) {
+          if (Math.random() < FIELD_CELL_FILL) {
             const ch = randomGlyphs(1);
-            ctx.fillStyle = `rgba(${RAIN_RGB}, ${alpha})`;
-            ctx.fillText(ch, x * fontSize, y * fontSize);
+            ctx.fillStyle = `rgba(${RAIN_RGB}, ${FIELD_CELL_ALPHA})`;
+            ctx.fillText(ch, col * fontSize, row * fontSize + fontSize);
           }
         }
       }
     };
 
+    const drawStaticField = () => {
+      ctx.fillStyle = '#050805';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      drawSparseGlyphField();
+    };
+
     const drawRain = () => {
       ctx.fillStyle = `rgba(5, 8, 5, ${FADE_ALPHA})`;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
+      drawSparseGlyphField();
+
       ctx.font = `${fontSize}px "IBM Plex Mono", monospace`;
 
       const baseAlpha = 0.32;
