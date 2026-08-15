@@ -5,6 +5,8 @@ name: Configure GitHub Pages
 # update Pages when the workflow has `pages: write`.
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
 
 permissions:
   contents: write
@@ -22,6 +24,19 @@ jobs:
           gh api -X PUT "repos/${GITHUB_REPOSITORY}/pages" -f build_type=workflow
           echo "Pages settings:"
           gh api "repos/${GITHUB_REPOSITORY}/pages"
+
+      - name: Allow github-pages environment deploys from main
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -uo pipefail
+          gh api -X PUT "repos/${GITHUB_REPOSITORY}/environments/github-pages" --input - <<'EOF' || true
+          {"deployment_branch_policy":{"protected_branches":false,"custom_branch_policies":true}}
+          EOF
+          gh api -X POST "repos/${GITHUB_REPOSITORY}/environments/github-pages/deployment-branch-policies" --input - <<'EOF' || true
+          {"name":"main","type":"branch"}
+          EOF
+          gh api "repos/${GITHUB_REPOSITORY}/environments/github-pages" || true
 
       - name: Rename default branch master to main
         env:
