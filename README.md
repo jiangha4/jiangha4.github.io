@@ -31,6 +31,7 @@ Manual deploy: trigger **Deploy to GitHub Pages** from the Actions tab (`workflo
 
 ## Project structure
 
+- `AGENTS.md` — navigation guide and design decisions for AI agents / contributors
 - `src/content.ts` — all site copy (typed)
 - `src/components/` — React components (Matrix rain, boot sequence, sections)
 - `public/img/` — static assets (headshot)
