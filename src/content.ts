@@ -1,5 +1,5 @@
 export const siteMeta = {
-  title: 'David Jiang — Data Platform Engineer',
+  title: 'David Jiang — Staff Data Platform Engineer',
   description:
     'David Jiang is lead engineer on Jeter, Nike’s developer intelligence platform — TB-scale lakehouse ingestion, multi-store serving, and production AI analytics that informed a $2.25M company-wide licensing decision.',
   url: 'https://jiangha4.github.io/',
@@ -16,7 +16,7 @@ export const navItems = [
 
 export const heroContent = {
   name: 'David Jiang',
-  role: 'data platform engineer',
+  role: 'Staff data platform engineer',
   leadLine: 'lead on Jeter · Nike developer intelligence',
   themesLine: 'lakehouse + AI analytics',
   actions: [

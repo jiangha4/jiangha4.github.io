@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
+- Hero first-paint role line: `Staff data platform engineer` (designer sign-off).
 - Locked chrome accent to `#3dcc7a` across borders, rain glyphs, focus rings, and favicon.
 - Design lock: static hero staff line (no BootSequence); rain background-only with locked dim phosphor `#3dcc7a`; removed scanlines and scrolling log column.
 - Stack section is an 11-item fold list; removed ticker marquee and 33-chip wall.
