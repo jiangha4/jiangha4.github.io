@@ -19,99 +19,97 @@
   margin: 0 0 1.25rem;
 }
 
-.timeline {
-  display: grid;
-  grid-template-columns: 3.25rem 1fr;
-  gap: 0 1.5rem;
-  align-items: stretch;
+.timelineWrap {
+  margin-bottom: 1.5rem;
 }
 
-.yearRail {
+.timelineRows {
   position: relative;
-  min-height: 28rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
 }
 
 .railLine {
   position: absolute;
-  left: 50%;
-  top: 0.25rem;
-  bottom: 0.25rem;
+  left: 1.625rem;
+  top: 0.35rem;
+  bottom: 0.35rem;
   width: 1px;
   background: var(--color-chrome-mid);
-  transform: translateX(-50%);
-}
-
-.railMark {
-  position: absolute;
-  left: 0;
-  right: 0;
-  transform: translateY(-50%);
-  text-align: center;
-  font-family: var(--font-mono);
-  line-height: 1.1;
-}
-
-.railYear {
-  display: block;
-  font-size: 0.7rem;
-  color: var(--color-chrome);
-  font-weight: 500;
-}
-
-.railSublabel {
-  display: block;
-  font-size: 0.58rem;
-  color: var(--color-chrome-mid);
-  letter-spacing: 0.04em;
-  margin-top: 0.1rem;
-}
-
-.railContent {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
 }
 
 .timelineRow {
   display: grid;
-  grid-template-columns: 3rem 1fr;
-  gap: 1rem;
+  grid-template-columns: 3.25rem 1fr;
+  gap: 1.25rem;
   align-items: start;
 }
 
-.rowYear {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: var(--color-chrome-mid);
-  line-height: 1.2;
-  padding-top: 0.15rem;
+.timelineRowHeavy {
+  gap: 1.5rem;
+  padding-bottom: 0.25rem;
 }
 
-.rowYearValue {
+.railCell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  z-index: 1;
+}
+
+.railYear {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
   color: var(--color-chrome);
   font-weight: 500;
+  line-height: 1;
 }
 
-.rowYearEnd {
-  color: var(--color-chrome-mid);
-}
-
-.rowYearSub {
-  display: block;
-  font-size: 0.58rem;
-  color: var(--color-chrome-mid);
-  margin-top: 0.1rem;
-}
-
-.entryBlock {
-  border: var(--border-hairline);
+.node {
   border-radius: var(--radius-panel);
-  padding: 1.15rem 1.25rem;
-  background: rgba(5, 8, 5, 0.88);
+  flex-shrink: 0;
+}
+
+.nodeFilled {
+  width: 0.55rem;
+  height: 0.55rem;
+  background: var(--color-chrome);
+  border: 1px solid var(--color-chrome);
+}
+
+.nodeHollow {
+  width: 0.5rem;
+  height: 0.5rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-chrome);
+}
+
+.nodeHeavy {
+  width: 0.85rem;
+  height: 0.85rem;
+  background: var(--color-chrome);
+  border: 1px solid var(--color-chrome);
+  box-shadow: 0 0 10px rgba(var(--rain-rgb), 0.35);
+}
+
+.rowBody {
+  min-width: 0;
+}
+
+.entryContent {
+  padding-top: 0.05rem;
+}
+
+.entryContentHeavy {
+  padding-top: 0.05rem;
+  padding-left: 0.25rem;
+  border-left: 2px solid rgba(var(--rain-rgb), 0.22);
 }
 
 .entryHeader {
-  margin-bottom: 0.65rem;
+  margin-bottom: 0.55rem;
 }
 
 .entryTitle {
@@ -134,7 +132,7 @@
   font-size: 0.9375rem;
   color: var(--color-text);
   line-height: 1.55;
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.65rem;
 }
 
 .links {
@@ -165,7 +163,7 @@
 }
 
 .field {
-  margin-bottom: 0.65rem;
+  margin-bottom: 0.7rem;
 }
 
 .field:last-child {
@@ -194,12 +192,10 @@
   color: var(--color-text-muted);
   line-height: 1.45;
   margin: 0;
-  padding: 0.35rem 0;
-  border-bottom: 1px solid rgba(var(--rain-rgb), 0.1);
+  padding: 0.2rem 0;
 }
 
-.educationBlock {
-  margin-top: 0.5rem;
+.educationBelow {
   padding-top: 1rem;
   border-top: var(--border-hairline);
 }
@@ -233,37 +229,31 @@
 }
 
 @media (min-width: 768px) {
-  .timeline {
-    grid-template-columns: 4rem 1fr;
-    gap: 0 2rem;
-  }
-
-  .yearRail {
-    min-height: 32rem;
-  }
-
-  .entryBlock {
-    padding: 1.25rem 1.5rem;
-  }
-
   .timelineRow {
     grid-template-columns: 3.5rem 1fr;
-    gap: 1.25rem;
+    gap: 1.5rem;
+  }
+
+  .railLine {
+    left: 1.75rem;
+  }
+
+  .timelineRows {
+    gap: 2rem;
   }
 }
 
 @media (max-width: 640px) {
-  .timeline {
+  .timelineRow {
     grid-template-columns: 2.75rem 1fr;
-    gap: 0 1rem;
+    gap: 1rem;
+  }
+
+  .railLine {
+    left: 1.375rem;
   }
 
   .railYear {
     font-size: 0.62rem;
-  }
-
-  .timelineRow {
-    grid-template-columns: 2.5rem 1fr;
-    gap: 0.75rem;
   }
 }

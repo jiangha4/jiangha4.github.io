@@ -89,14 +89,15 @@ export interface ExperienceCaseStudyLink {
 
 export interface ExperienceRailMark {
   year: string;
-  sublabel?: string;
+  node: 'filled' | 'hollow';
+  heavy?: boolean;
 }
 
 export interface ExperienceNikeIIIEntry {
   id: string;
   kind: 'nike-iii';
   yearMark: string;
-  yearSublabel?: string;
+  node: 'filled';
   title: string;
   period: string;
   leadBeat: string;
@@ -108,6 +109,8 @@ export interface ExperienceNikeIIEntry {
   kind: 'nike-ii';
   yearMark: string;
   yearEnd?: string;
+  node: 'filled';
+  heavy: true;
   title: string;
   period: string;
   fields: ExperienceField[];
@@ -118,6 +121,7 @@ export interface ExperienceLineEntry {
   kind: 'line';
   yearMark: string;
   yearEnd?: string;
+  node: 'hollow';
   line: string;
 }
 
@@ -127,23 +131,18 @@ export type ExperienceEntry =
   | ExperienceLineEntry;
 
 export const experienceContent = {
-  rail: {
-    startYear: 2016,
-    endYear: 2026,
-    marks: [
-      { year: '2016' },
-      { year: '2019' },
-      { year: '2020' },
-      { year: '2025' },
-      { year: '2026', sublabel: 'present' },
-    ] satisfies ExperienceRailMark[],
-  },
+  railMarks: [
+    { year: '2025', node: 'filled' },
+    { year: '2020', node: 'filled', heavy: true },
+    { year: '2019', node: 'hollow' },
+    { year: '2016', node: 'hollow' },
+  ] satisfies ExperienceRailMark[],
   entries: [
     {
       id: 'nike-iii',
       kind: 'nike-iii',
-      yearMark: '2026',
-      yearSublabel: 'present',
+      yearMark: '2025',
+      node: 'filled',
       title: 'Nike · Software Engineer III, lead engineer, Jeter',
       period: 'Nov 2025 – present',
       leadBeat:
@@ -158,6 +157,8 @@ export const experienceContent = {
       kind: 'nike-ii',
       yearMark: '2020',
       yearEnd: '2025',
+      node: 'filled',
+      heavy: true,
       title: 'Nike · Software Engineer II',
       period: 'Mar 2020 – Nov 2025',
       fields: [
@@ -188,6 +189,7 @@ export const experienceContent = {
       kind: 'line',
       yearMark: '2019',
       yearEnd: '2020',
+      node: 'hollow',
       line: 'Future State Consulting — Senior Software Engineer · Apr 2019 – Mar 2020 · onsite Nike WHQ',
     },
     {
@@ -195,6 +197,7 @@ export const experienceContent = {
       kind: 'line',
       yearMark: '2016',
       yearEnd: '2019',
+      node: 'hollow',
       line: 'BeyondSoft — Software Engineer · Feb 2016 – Apr 2019 · HP contractor',
     },
   ] satisfies ExperienceEntry[],
