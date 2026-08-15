@@ -99,12 +99,14 @@ Use CSS custom properties in `globals.css`; section-specific layout in `*.module
 
 | Feature | Normal | `prefers-reduced-motion: reduce` |
 |---------|--------|----------------------------------|
-| Matrix rain | rAF canvas animation (background only) | Static glyph field (paused) |
+| Matrix rain | Single fixed full-viewport canvas, rAF | Static glyph field (no falling) |
+| Below-fold sections | Glyph decode on 20% intersection (28ms/glyph, 700ms max/line, 80ms line stagger) | Real copy immediately |
 | Stack fold list | `<details>` expand/collapse | Same (no marquee) |
 
 Additional rules:
 
-- Rain is a **background layer only** — never on top of type; hero staff line is static on first paint (no typewriter)
+- Rain is **one** full-bleed fixed canvas behind all content — no per-section rain instances
+- Hero staff line is **real text on first paint** — never decode the hero
 - Rain pauses when `document.visibilityState === 'hidden'`
 - Throttle rain on small screens (`max-width: 640px`) and when `navigator.connection.saveData` is true
 - Hero uses `intensity="full"`; work section uses `intensity="faint"`
