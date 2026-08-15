@@ -17,6 +17,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
+- `docs/motion-walkthrough.mp4` — ~18s clip showing full-bleed rain + scroll-in section decode.
 - `docs/walkthrough.mp4` — ~24s PR walkthrough (Staff hero first paint, signal, work panels, supporting systems).
 - `CHANGELOG.md` with agent update rules; seeded with site rebuild history.
 - `AGENTS.md` — repo map, design system, motion/a11y rules, and verification checklist.
