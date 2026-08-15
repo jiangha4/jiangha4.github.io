@@ -1,0 +1,78 @@
+.stack {
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+
+.inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+
+.tickerWrap {
+  margin-bottom: 1rem;
+  border: var(--border-hairline);
+  border-radius: var(--radius-panel);
+  overflow: hidden;
+  background: rgba(11, 61, 31, 0.1);
+}
+
+.ticker {
+  overflow: hidden;
+  padding: 0.6rem 0;
+}
+
+.track {
+  display: flex;
+  gap: 2rem;
+  animation: marquee 45s linear infinite;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-chrome);
+  white-space: nowrap;
+}
+
+.staticList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.chip {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid var(--color-chrome-dim);
+  border-radius: var(--radius-panel);
+  color: var(--color-text-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tickerWrap {
+    display: none;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (min-width: 768px) {
+  .staticList {
+    /* hide static wrap on large screens when ticker runs — spec says static for reduced-motion AND SEO */
+  }
+}
+
+/* Always show static list for SEO; ticker is decorative overlay on motion-enabled */
+@media (prefers-reduced-motion: no-preference) {
+  .staticList {
+    opacity: 0.85;
+  }
+}

@@ -1,0 +1,22 @@
+.section {
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+
+.inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+
+.panel {
+  border: var(--border-hairline);
+  border-radius: var(--radius-panel);
+  padding: 1.5rem;
+  background: rgba(11, 61, 31, 0.08);
+}
+
+.body {
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--color-text);
+}

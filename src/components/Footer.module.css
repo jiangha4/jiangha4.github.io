@@ -1,0 +1,32 @@
+.footer {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem;
+  border-top: var(--border-hairline);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.copy {
+  margin: 0;
+}
+
+.source {
+  color: var(--color-chrome-mid);
+  text-decoration: none;
+}
+
+.source:hover {
+  color: var(--color-chrome);
+}
+
+@media (min-width: 768px) {
+  .footer {
+    padding: 2rem 2rem 3rem;
+  }
+}

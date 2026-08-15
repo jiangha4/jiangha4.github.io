@@ -1,0 +1,146 @@
+:root {
+  --color-bg: #050805;
+  --color-chrome: #00ff6a;
+  --color-chrome-dim: #0b3d1f;
+  --color-chrome-mid: #1a6b3a;
+  --color-text: #e8efe9;
+  --color-text-muted: #a8b5ab;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
+  --border-hairline: 1px solid var(--color-chrome-mid);
+  --radius-panel: 3px;
+  --focus-ring: 2px solid var(--color-chrome);
+  --focus-offset: 2px;
+  --nav-height: 3rem;
+  --section-gap: 4rem;
+  --content-max: 72rem;
+  --scanline-opacity: 0.04;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 255, 106, var(--scanline-opacity)) 2px,
+    rgba(0, 255, 106, var(--scanline-opacity)) 4px
+  );
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(0, 255, 106, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 106, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0.5rem;
+  z-index: 10000;
+  padding: 0.5rem 1rem;
+  background: var(--color-bg);
+  border: var(--border-hairline);
+  color: var(--color-chrome);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 0.5rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+h2 {
+  font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+  color: var(--color-chrome);
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: var(--color-chrome);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--color-text);
+}
+
+section {
+  padding: var(--section-gap) 1.25rem;
+}
+
+@media (min-width: 768px) {
+  section {
+    padding: var(--section-gap) 2rem;
+  }
+}

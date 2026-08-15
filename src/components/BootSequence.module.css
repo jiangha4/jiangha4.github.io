@@ -1,0 +1,55 @@
+.boot {
+  font-family: var(--font-mono);
+  font-size: clamp(0.875rem, 2vw, 1.0625rem);
+  color: var(--color-chrome);
+  cursor: pointer;
+  user-select: none;
+}
+
+.boot:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+}
+
+.line {
+  margin-bottom: 0.35rem;
+  white-space: pre-wrap;
+}
+
+.line:nth-child(2) {
+  font-size: clamp(1.25rem, 3.5vw, 1.75rem);
+  font-weight: 600;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.cursor {
+  animation: blink 1s step-end infinite;
+  color: var(--color-chrome);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor {
+    animation: none;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.hint {
+  display: block;
+  margin-top: 0.75rem;
+  font-size: 0.7rem;
+  color: var(--color-chrome-mid);
+  letter-spacing: 0.05em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hint {
+    display: none;
+  }
+}
