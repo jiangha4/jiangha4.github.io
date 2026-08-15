@@ -8,6 +8,17 @@
   margin: 0 auto;
 }
 
+.heading {
+  font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+  color: var(--color-chrome);
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  line-height: 1.25;
+  margin: 0 0 1rem;
+}
+
 .jeterPanel {
   border: var(--border-hairline);
   border-radius: var(--radius-panel);

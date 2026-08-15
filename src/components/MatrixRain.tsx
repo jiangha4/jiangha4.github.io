@@ -1,15 +1,13 @@
 import { useEffect, useRef } from 'react';
 import { useIsSmallScreen, usePrefersReducedMotion, useSaveData } from '../hooks/useMediaPreferences';
+import { randomGlyphs } from '../hooks/useSectionDecode';
+import styles from './MatrixRain.module.css';
 
-const GLYPHS = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEF';
 const RAIN_RGB = '61, 204, 122';
+const DROP_STEP = 0.2;
+const FADE_ALPHA = 0.04;
 
-interface MatrixRainProps {
-  className?: string;
-  intensity?: 'full' | 'faint';
-}
-
-export function MatrixRain({ className, intensity = 'full' }: MatrixRainProps) {
+export function MatrixRain() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const reducedMotion = usePrefersReducedMotion();
   const saveData = useSaveData();
@@ -29,11 +27,9 @@ export function MatrixRain({ className, intensity = 'full' }: MatrixRainProps) {
     let paused = false;
 
     const resize = () => {
-      const parent = canvas.parentElement;
-      if (!parent) return;
-      canvas.width = parent.clientWidth;
-      canvas.height = parent.clientHeight;
-      fontSize = isSmall ? 12 : intensity === 'faint' ? 12 : 14;
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      fontSize = isSmall ? 12 : 14;
       columns = Math.floor(canvas.width / fontSize);
       drops = Array.from({ length: columns }, () => Math.random() * -50);
     };
@@ -42,11 +38,11 @@ export function MatrixRain({ className, intensity = 'full' }: MatrixRainProps) {
       ctx.fillStyle = '#050805';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.font = `${fontSize}px "IBM Plex Mono", monospace`;
-      const alpha = intensity === 'faint' ? 0.06 : 0.12;
+      const alpha = 0.1;
       for (let x = 0; x < columns; x++) {
         for (let y = 0; y < canvas.height / fontSize; y++) {
           if (Math.random() > 0.7) {
-            const ch = GLYPHS[Math.floor(Math.random() * GLYPHS.length)];
+            const ch = randomGlyphs(1);
             ctx.fillStyle = `rgba(${RAIN_RGB}, ${alpha})`;
             ctx.fillText(ch, x * fontSize, y * fontSize);
           }
@@ -55,15 +51,15 @@ export function MatrixRain({ className, intensity = 'full' }: MatrixRainProps) {
     };
 
     const drawRain = () => {
-      ctx.fillStyle = 'rgba(5, 8, 5, 0.08)';
+      ctx.fillStyle = `rgba(5, 8, 5, ${FADE_ALPHA})`;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.font = `${fontSize}px "IBM Plex Mono", monospace`;
 
-      const baseAlpha = intensity === 'faint' ? 0.18 : 0.38;
-      const throttle = saveData || isSmall;
+      const baseAlpha = 0.32;
+      const dropStep = saveData ? DROP_STEP * 0.5 : DROP_STEP;
 
       for (let i = 0; i < drops.length; i++) {
-        const ch = GLYPHS[Math.floor(Math.random() * GLYPHS.length)];
+        const ch = randomGlyphs(1);
         const x = i * fontSize;
         const y = drops[i] * fontSize;
         ctx.fillStyle = `rgba(${RAIN_RGB}, ${baseAlpha * (0.4 + Math.random() * 0.6)})`;
@@ -72,11 +68,11 @@ export function MatrixRain({ className, intensity = 'full' }: MatrixRainProps) {
         if (y > canvas.height && Math.random() > 0.975) {
           drops[i] = 0;
         }
-        drops[i] += throttle ? 0.5 : 1;
+        drops[i] += dropStep;
       }
     };
 
-    const shouldAnimate = !reducedMotion && !(saveData && intensity === 'full');
+    const shouldAnimate = !reducedMotion;
 
     const loop = () => {
       if (!paused && document.visibilityState === 'visible' && shouldAnimate) {
@@ -90,28 +86,27 @@ export function MatrixRain({ className, intensity = 'full' }: MatrixRainProps) {
     };
 
     resize();
-    if (reducedMotion || (saveData && intensity === 'full')) {
+    if (reducedMotion) {
       drawStaticField();
     } else {
       drawRain();
       animationId = window.requestAnimationFrame(loop);
     }
 
-    const ro = new ResizeObserver(resize);
-    ro.observe(canvas.parentElement!);
+    window.addEventListener('resize', resize);
     document.addEventListener('visibilitychange', onVisibility);
 
     return () => {
       window.cancelAnimationFrame(animationId);
-      ro.disconnect();
+      window.removeEventListener('resize', resize);
       document.removeEventListener('visibilitychange', onVisibility);
     };
-  }, [reducedMotion, saveData, isSmall, intensity]);
+  }, [reducedMotion, saveData, isSmall]);
 
   return (
     <canvas
       ref={canvasRef}
-      className={className}
+      className={styles.canvas}
       aria-hidden="true"
     />
   );

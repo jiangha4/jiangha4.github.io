@@ -1,13 +1,9 @@
-import { MatrixRain } from './MatrixRain';
 import { heroContent } from '../content';
 import styles from './Hero.module.css';
 
 export function Hero() {
   return (
     <section className={styles.hero} aria-labelledby="hero-heading">
-      <div className={styles.rainWrap}>
-        <MatrixRain className={styles.rain} intensity="full" />
-      </div>
       <div className={styles.content}>
         <div className={styles.terminal}>
           <h1 id="hero-heading" className={styles.name}>
