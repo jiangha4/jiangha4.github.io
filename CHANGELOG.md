@@ -8,9 +8,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
-- Experience layout C: vertical year rail 2016→2026 with content beats aligned to marks (replaces two-card layout).
+- Experience layout C (designer lock): year rail **2025 / 2020 / 2019 / 2016** (no 2026 mark); filled nodes on Nike III + Nike II; hollow on Future State + BeyondSoft; Nike II heaviest node (team, Referee, Cerberus/China, Jeter foundation); Nike III lead beat + case-study links; education under rail; rail structure only (no A-style cards).
 - Motion lock: single fixed full-viewport rain (drop 0.2, fade 0.025); scroll-in glyph decode for below-fold sections at 20% intersection.
-- Experience section: two featured Nike panels (III links to case studies; II four-field layout) + one-line rows for earlier roles and education.
 - Hero first-paint role line: `Staff data platform engineer` (designer sign-off).
 - Locked chrome accent to `#3dcc7a` across borders, rain glyphs, focus rings, and favicon.
 - Design lock: static hero staff line (no BootSequence); rain background-only with locked dim phosphor `#3dcc7a`; removed scanlines and scrolling log column.
