@@ -76,7 +76,7 @@ Before finishing a change: `npm run lint && npm run build` must pass. CI runs th
 
 Shared primitives:
 
-- `MatrixRain` — canvas digital rain (hero + work backdrop; background layer only)
+- `MatrixRain` — single fixed full-viewport canvas in `App.tsx` (drop 0.2, fade 0.04)
 - `TerminalPanel` — work card layout (problem / built / outcome)
 - `ReservedPanel` — placeholder for forthcoming flagship case study
 
