@@ -8,7 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
-- Rain full-bleed: sparse glyph field (~20% cells, alpha 0.10) every frame under rain heads; fade 0.025.
+- Rain full-bleed: every `drawRain` frame stamps sparse glyph grid (~20% cells, α 0.10) across full height before rain heads; fade 0.025.
 - Motion lock: single fixed full-viewport rain (drop 0.2, fade 0.025); scroll-in glyph decode for below-fold sections at 20% intersection.
 - Experience section: two featured Nike panels (III links to case studies; II four-field layout) + one-line rows for earlier roles and education.
 - Hero first-paint role line: `Staff data platform engineer` (designer sign-off).

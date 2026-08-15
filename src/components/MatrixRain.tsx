@@ -7,7 +7,6 @@ const RAIN_RGB = '61, 204, 122';
 const DROP_STEP = 0.2;
 const FADE_ALPHA = 0.025;
 const FIELD_CELL_ALPHA = 0.1;
-const FIELD_CELL_FILL = 0.2;
 
 export function MatrixRain() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -34,18 +33,18 @@ export function MatrixRain() {
       canvas.height = window.innerHeight;
       fontSize = isSmall ? 12 : 14;
       columns = Math.floor(canvas.width / fontSize);
-      rows = Math.ceil(canvas.height / fontSize);
+      rows = Math.floor(canvas.height / fontSize);
       drops = Array.from({ length: columns }, () => Math.random() * rows);
     };
 
-    const drawSparseGlyphField = () => {
+    const stampSparseGlyphGrid = () => {
       ctx.font = `${fontSize}px "IBM Plex Mono", monospace`;
       for (let col = 0; col < columns; col++) {
         for (let row = 0; row < rows; row++) {
-          if (Math.random() < FIELD_CELL_FILL) {
+          if (Math.random() > 0.8) {
             const ch = randomGlyphs(1);
             ctx.fillStyle = `rgba(${RAIN_RGB}, ${FIELD_CELL_ALPHA})`;
-            ctx.fillText(ch, col * fontSize, row * fontSize + fontSize);
+            ctx.fillText(ch, col * fontSize, (row + 1) * fontSize);
           }
         }
       }
@@ -54,16 +53,19 @@ export function MatrixRain() {
     const drawStaticField = () => {
       ctx.fillStyle = '#050805';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-      drawSparseGlyphField();
+      stampSparseGlyphGrid();
     };
 
     const drawRain = () => {
+      // 1. Fade overlay
       ctx.fillStyle = `rgba(5, 8, 5, ${FADE_ALPHA})`;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-      drawSparseGlyphField();
 
+      // 2. Sparse glyph grid — full canvas, ~20% of cells, including bottom rows
+      stampSparseGlyphGrid();
+
+      // 3. Rain heads on top
       ctx.font = `${fontSize}px "IBM Plex Mono", monospace`;
-
       const baseAlpha = 0.32;
       const dropStep = saveData ? DROP_STEP * 0.5 : DROP_STEP;
 
