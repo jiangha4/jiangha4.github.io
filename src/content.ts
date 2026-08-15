@@ -15,37 +15,15 @@ export const navItems = [
 ] as const;
 
 export const heroContent = {
-  bootLines: [
-    '> identity.init()',
-    '> DAVID JIANG',
-    '> data platform engineer · Nike',
-    '> lead engineer, Jeter — developer intelligence',
-  ],
-  proofLine:
-    'Databricks lakehouse · TB-scale ingestion · production AI spend analytics',
+  name: 'David Jiang',
+  role: 'data platform engineer',
+  leadLine: 'lead on Jeter · Nike developer intelligence',
+  themesLine: 'lakehouse + AI analytics',
   actions: [
     { label: 'work', target: 'work' },
     { label: 'contact', target: 'contact' },
   ],
 };
-
-export const scrollingLogs = [
-  'ingest: bronze → silver → gold pipeline complete',
-  'lakehouse.job: GitHub ETL migrated to Databricks',
-  'graphql.resolver: federated merge — 9 subgraphs online',
-  'slo.check: AppSync availability target 99.9%',
-  'firehose.stream: Kinesis → S3 bronze layer',
-  'delta.share: Neptune consumer sync intact',
-  'spark.job: PySpark classification — 8,200+ users',
-  'observability: X-Ray trace sampling enabled',
-  'etl.cursor: token usage bronze events landed',
-  'glue.decommission: phased Workday migration',
-  'opensearch.index: serving layer refresh',
-  'lambda.invoke: ingestion handler warm',
-  'grafana.alert: SLO breach threshold armed',
-  'unity.catalog: Delta Lake table registered',
-  'appSync.subgraph: health check passed',
-];
 
 export const signalContent = {
   heading: 'signal',
@@ -105,39 +83,23 @@ export const supportingSystems = {
     'Referee — automated canary analysis for AWS ECS and EC2 on customer-facing revenue apps. Cerberus — Java Spring Boot secrets manager spanning AWS Commercial and AWS China (including China rollout). Prior production platform work; not the public flagship story.',
 };
 
+export const stackContent = {
+  foldLabel: 'core stack · 11',
+};
+
+/** Hiring-relevant stack — fold list only, no ticker or chip wall. */
 export const stackItems = [
   'Databricks',
-  'Unity Catalog',
-  'Delta Lake',
-  'Auto Loader',
-  'Delta Sharing',
-  'Spark / PySpark',
+  'Spark',
   'AWS Glue',
   'Kinesis',
-  'Lambda',
-  'Step Functions',
-  'EventBridge',
-  'S3',
+  'Delta Lake',
   'Neptune',
   'DynamoDB',
   'OpenSearch',
-  'Aurora MySQL',
-  'Snowflake',
-  'Athena',
   'AppSync',
-  'GraphQL',
-  'X-Ray',
-  'Grafana',
-  'CloudWatch',
-  'SAM / CloudFormation',
-  'Docker',
-  'Jenkins',
-  'GitHub Actions',
   'Python',
   'SQL',
-  'Java',
-  'Scala',
-  'JavaScript',
 ];
 
 export interface ExperienceEntry {

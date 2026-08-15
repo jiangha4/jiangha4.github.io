@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { useIsSmallScreen, usePrefersReducedMotion, useSaveData } from '../hooks/useMediaPreferences';
 
 const GLYPHS = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEF';
+const RAIN_RGB = '61, 220, 132';
 
 interface MatrixRainProps {
   className?: string;
@@ -41,12 +42,12 @@ export function MatrixRain({ className, intensity = 'full' }: MatrixRainProps) {
       ctx.fillStyle = '#050805';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.font = `${fontSize}px "IBM Plex Mono", monospace`;
-      const alpha = intensity === 'faint' ? 0.08 : 0.15;
+      const alpha = intensity === 'faint' ? 0.06 : 0.12;
       for (let x = 0; x < columns; x++) {
         for (let y = 0; y < canvas.height / fontSize; y++) {
           if (Math.random() > 0.7) {
             const ch = GLYPHS[Math.floor(Math.random() * GLYPHS.length)];
-            ctx.fillStyle = `rgba(0, 255, 106, ${alpha})`;
+            ctx.fillStyle = `rgba(${RAIN_RGB}, ${alpha})`;
             ctx.fillText(ch, x * fontSize, y * fontSize);
           }
         }
@@ -58,14 +59,14 @@ export function MatrixRain({ className, intensity = 'full' }: MatrixRainProps) {
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.font = `${fontSize}px "IBM Plex Mono", monospace`;
 
-      const baseAlpha = intensity === 'faint' ? 0.25 : 0.55;
+      const baseAlpha = intensity === 'faint' ? 0.18 : 0.38;
       const throttle = saveData || isSmall;
 
       for (let i = 0; i < drops.length; i++) {
         const ch = GLYPHS[Math.floor(Math.random() * GLYPHS.length)];
         const x = i * fontSize;
         const y = drops[i] * fontSize;
-        ctx.fillStyle = `rgba(0, 255, 106, ${baseAlpha * (0.4 + Math.random() * 0.6)})`;
+        ctx.fillStyle = `rgba(${RAIN_RGB}, ${baseAlpha * (0.4 + Math.random() * 0.6)})`;
         ctx.fillText(ch, x, y);
 
         if (y > canvas.height && Math.random() > 0.975) {
@@ -78,10 +79,8 @@ export function MatrixRain({ className, intensity = 'full' }: MatrixRainProps) {
     const shouldAnimate = !reducedMotion && !(saveData && intensity === 'full');
 
     const loop = () => {
-      if (!paused && document.visibilityState === 'visible') {
-        if (shouldAnimate) {
-          drawRain();
-        }
+      if (!paused && document.visibilityState === 'visible' && shouldAnimate) {
+        drawRain();
       }
       animationId = window.requestAnimationFrame(loop);
     };

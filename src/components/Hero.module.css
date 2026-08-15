@@ -6,12 +6,14 @@
   flex-direction: column;
   padding: 0;
   overflow: hidden;
+  isolation: isolate;
 }
 
 .rainWrap {
   position: absolute;
   inset: 0;
   z-index: 0;
+  pointer-events: none;
 }
 
 .rain {
@@ -35,20 +37,44 @@
 }
 
 .terminal {
-  max-width: 36rem;
+  max-width: 40rem;
   padding: 1.25rem 1.5rem;
   border: var(--border-hairline);
   border-radius: var(--radius-panel);
-  background: rgba(5, 8, 5, 0.85);
-  position: relative;
+  background: rgba(5, 8, 5, 0.94);
+  box-shadow: 0 0 0 1px rgba(var(--rain-rgb), 0.06);
 }
 
-.proof {
-  margin-top: 1.25rem;
+.name {
   font-family: var(--font-mono);
-  font-size: 0.8125rem;
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 600;
+  color: var(--color-chrome);
+  margin: 0 0 0.5rem;
+  line-height: 1.2;
+}
+
+.role {
+  font-family: var(--font-mono);
+  font-size: clamp(0.9375rem, 2vw, 1.0625rem);
+  color: var(--color-text);
+  margin: 0 0 0.35rem;
+}
+
+.lead {
+  font-family: var(--font-mono);
+  font-size: clamp(0.875rem, 1.8vw, 1rem);
   color: var(--color-text-muted);
-  line-height: 1.5;
+  margin: 0 0 0.35rem;
+  line-height: 1.45;
+}
+
+.themes {
+  font-family: var(--font-mono);
+  font-size: clamp(0.8125rem, 1.6vw, 0.9375rem);
+  color: var(--color-chrome-mid);
+  margin: 0.5rem 0 0;
+  line-height: 1.45;
 }
 
 .actions {
@@ -71,21 +97,9 @@
 
 .action:hover,
 .action:focus-visible {
-  background: rgba(0, 255, 106, 0.08);
+  background: rgba(var(--rain-rgb), 0.1);
   border-color: var(--color-chrome);
   color: var(--color-chrome);
-}
-
-.visuallyHidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
 }
 
 @media (min-width: 768px) {

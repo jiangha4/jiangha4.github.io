@@ -1,8 +1,8 @@
 :root {
   --color-bg: #050805;
-  --color-chrome: #00ff6a;
-  --color-chrome-dim: #0b3d1f;
-  --color-chrome-mid: #1a6b3a;
+  --color-chrome: #3ddc84;
+  --color-chrome-dim: #0f3322;
+  --color-chrome-mid: #1e5c3f;
   --color-text: #e8efe9;
   --color-text-muted: #a8b5ab;
   --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
@@ -14,7 +14,7 @@
   --nav-height: 3rem;
   --section-gap: 4rem;
   --content-max: 72rem;
-  --scanline-opacity: 0.04;
+  --rain-rgb: 61, 220, 132;
 }
 
 *,
@@ -43,21 +43,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 9999;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(0, 255, 106, var(--scanline-opacity)) 2px,
-    rgba(0, 255, 106, var(--scanline-opacity)) 4px
-  );
-}
-
 body::after {
   content: '';
   position: fixed;
@@ -65,8 +50,8 @@ body::after {
   pointer-events: none;
   z-index: 0;
   background-image:
-    linear-gradient(rgba(0, 255, 106, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 255, 106, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(var(--rain-rgb), 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--rain-rgb), 0.025) 1px, transparent 1px);
   background-size: 48px 48px;
 }
 

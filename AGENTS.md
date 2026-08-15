@@ -53,7 +53,7 @@ Before finishing a change: `npm run lint && npm run build` must pass. CI runs th
 | `src/content.ts` | **All user-facing copy** — nav labels, hero boot lines, signal paragraph, work panels, stack list, experience, contact, meta strings |
 | `src/App.tsx` | Page shell: skip link, nav, section order, footer |
 | `src/main.tsx` | React entry; imports `styles/globals.css` |
-| `src/styles/globals.css` | Design tokens (`:root`), base typography, skip link, scanlines/grid overlays |
+| `src/styles/globals.css` | Design tokens (`:root`), base typography, skip link, faint grid overlay |
 | `src/components/` | UI sections and effects (one component + CSS module per concern) |
 | `src/hooks/useMediaPreferences.ts` | `prefers-reduced-motion`, `Save-Data`, small-screen breakpoints |
 | `public/img/` | Static assets (headshot: `profile_picture.jpeg`) |
@@ -66,20 +66,19 @@ Before finishing a change: `npm run lint && npm run build` must pass. CI runs th
 | Component | Section id | Notes |
 |-----------|------------|--------|
 | `Navigation` | — | Sticky nav; mobile menu toggle |
-| `Hero` | — | Full-viewport rain, boot sequence, scrolling logs, CTAs |
+| `Hero` | — | Static staff line on first paint; background rain only |
 | `Work` | `#work` | Two case-study `TerminalPanel`s + one `ReservedPanel` placeholder |
 | `Signal` | `#signal` | Jeter platform lead story (staff-scope, outcomes-first) |
-| `Stack` | `#stack` | Marquee ticker + static chip list (SEO / reduced-motion) |
+| `Stack` | `#stack` | 11-item fold list (`<details>`); no ticker or chip wall |
 | `Experience` | `#experience` | Timeline + education |
 | `Contact` | `#contact` | mailto + external links only |
 | `Footer` | — | Copyright + repo source link |
 
 Shared primitives:
 
-- `MatrixRain` — canvas digital rain (hero + work backdrop)
-- `BootSequence` — typewriter hero lines (skippable)
-- `ScrollingLogs` — vertical log column in hero
+- `MatrixRain` — canvas digital rain (hero + work backdrop; background layer only)
 - `TerminalPanel` — work card layout (problem / built / outcome)
+- `ReservedPanel` — placeholder for forthcoming flagship case study
 
 ---
 
@@ -88,11 +87,11 @@ Shared primitives:
 ### Visual system — Matrix operator console, not movie poster
 
 - **Background:** `#050805` with optional faint grid (`globals.css` `body::after`)
-- **Chrome / accents:** phosphor green `#00ff6a`; secondary `#0b3d1f` / `#1a6b3a`
-- **Body copy:** off-white `#e8efe9` on dark — **never** long paragraphs in neon green
-- **Fonts:** IBM Plex Mono (chrome, labels, boot) + IBM Plex Sans (body) via Google Fonts in `index.html`
+- **Chrome / accents:** dim phosphor green `#3ddc84`; secondary `#0f3322` / `#1e5c3f` — not neon `#00ff6a`
+- **Body copy:** off-white `#e8efe9` on dark — **never** long paragraphs in green chrome
+- **Fonts:** IBM Plex Mono (chrome, labels) + IBM Plex Sans (body) via Google Fonts in `index.html`
 - **Panels:** hairline green borders, slight radius (`--radius-panel: 3px`), no glassmorphism, no Bootstrap cards, no emoji-as-design
-- **Scanlines:** subtle only (`--scanline-opacity` ≤ 0.06 in `globals.css`)
+- **No scanlines overlay**
 
 Use CSS custom properties in `globals.css`; section-specific layout in `*.module.css`. **No** Bootstrap, jQuery, Tailwind CDN, or UI kits.
 
@@ -100,12 +99,12 @@ Use CSS custom properties in `globals.css`; section-specific layout in `*.module
 
 | Feature | Normal | `prefers-reduced-motion: reduce` |
 |---------|--------|----------------------------------|
-| Matrix rain | rAF canvas animation | Static glyph field |
-| Boot sequence | Typewriter | All lines shown immediately |
-| Stack ticker / scrolling logs | CSS animation | Hidden or static fallback |
+| Matrix rain | rAF canvas animation (background only) | Static glyph field (paused) |
+| Stack fold list | `<details>` expand/collapse | Same (no marquee) |
 
 Additional rules:
 
+- Rain is a **background layer only** — never on top of type; hero staff line is static on first paint (no typewriter)
 - Rain pauses when `document.visibilityState === 'hidden'`
 - Throttle rain on small screens (`max-width: 640px`) and when `navigator.connection.saveData` is true
 - Hero uses `intensity="full"`; work section uses `intensity="faint"`
@@ -116,7 +115,7 @@ When adding motion, always branch on `usePrefersReducedMotion()` or CSS `@media 
 
 1. **Copy lives in `src/content.ts`** — not buried in JSX. Components import and render; they do not invent facts.
 2. **Do not invent metrics, employers, or confidential Nike internals** beyond what is already in `content.ts`.
-3. **Exactly one `<h1>`:** “David Jiang” (visually hidden in `Hero.tsx` for SEO; visible name is in boot sequence styling).
+3. **Exactly one `<h1>`:** “David Jiang” — visible in hero staff line block.
 4. **Section headings** use lowercase terminal style (`signal`, `selected work`, etc.) via `<h2>`.
 
 ### Accessibility
@@ -131,7 +130,7 @@ When adding motion, always branch on `usePrefersReducedMotion()` or CSS `@media 
 
 - Document title and meta description: `siteMeta` in `content.ts` + `index.html` (keep in sync when changing)
 - Open Graph tags in `index.html`
-- Stack section exposes a static chip list for crawlers even when ticker runs
+- Stack section exposes an 11-item fold list for hiring-relevant technologies
 
 ---
 
@@ -178,7 +177,7 @@ Blog, CMS, backend, auth, 3D WebGL, analytics pixels, contact forms, phone numbe
 - [ ] `npm run lint` passes
 - [ ] `npm run build` succeeds
 - [ ] Copy changes only in `content.ts` (or new typed content modules under `src/content/`)
-- [ ] Reduced-motion path still disables rain, typewriter, and marquees
+- [ ] Reduced-motion path pauses rain (static glyphs); no typewriter or marquees
 - [ ] Mobile: single column, no CTA overflow, nav menu works
 - [ ] No Bootstrap / jQuery / Font Awesome reintroduced
 - [ ] Body paragraphs remain off-white, not neon green

@@ -8,6 +8,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
+- Design lock: static hero staff line (no BootSequence); rain background-only with dim phosphor `#3ddc84`; removed scanlines and scrolling log column.
+- Stack section is an 11-item fold list; removed ticker marquee and 33-chip wall.
+
+### Changed
+
 - Reshaped page for 30-second Staff data-platform hiring screen: hero and signal lead with Jeter platform scope; case studies grid is lakehouse migration + AI coding spend lakehouse + reserved placeholder panel.
 - Removed ticket/repo counts and Referee/Cerberus from featured work panels; supporting systems blurb moved to experience.
 

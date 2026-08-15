@@ -1,6 +1,4 @@
-import { BootSequence } from './BootSequence';
 import { MatrixRain } from './MatrixRain';
-import { ScrollingLogs } from './ScrollingLogs';
 import { heroContent } from '../content';
 import styles from './Hero.module.css';
 
@@ -11,13 +9,13 @@ export function Hero() {
         <MatrixRain className={styles.rain} intensity="full" />
       </div>
       <div className={styles.content}>
-        <ScrollingLogs />
         <div className={styles.terminal}>
-          <BootSequence />
-          <h1 id="hero-heading" className={styles.visuallyHidden}>
-            David Jiang
+          <h1 id="hero-heading" className={styles.name}>
+            {heroContent.name}
           </h1>
-          <p className={styles.proof}>{heroContent.proofLine}</p>
+          <p className={styles.role}>{heroContent.role}</p>
+          <p className={styles.lead}>{heroContent.leadLine}</p>
+          <p className={styles.themes}>{heroContent.themesLine}</p>
           <div className={styles.actions}>
             {heroContent.actions.map((action) => (
               <a
