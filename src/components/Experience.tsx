@@ -1,45 +1,68 @@
-import { educationEntries, experienceEntries, supportingSystems } from '../content';
+import { experienceContent } from '../content';
+import { MatrixRain } from './MatrixRain';
 import styles from './Experience.module.css';
 
 export function Experience() {
+  const { featuredRoles, earlierRows, educationRows } = experienceContent;
+
   return (
     <section id="experience" className={styles.experience} aria-labelledby="experience-heading">
+      <div className={styles.rainWrap}>
+        <MatrixRain className={styles.rain} intensity="faint" />
+      </div>
       <div className={styles.inner}>
         <h2 id="experience-heading">experience</h2>
-        <aside className={styles.supporting} aria-labelledby="supporting-heading">
-          <h3 id="supporting-heading" className={styles.supportingHeading}>
-            {supportingSystems.heading}
-          </h3>
-          <p className={styles.supportingBlurb}>{supportingSystems.blurb}</p>
-        </aside>
-        <ol className={styles.timeline}>
-          {experienceEntries.map((entry) => (
-            <li key={entry.id} className={styles.entry}>
-              <div className={styles.marker} aria-hidden="true" />
-              <div className={styles.card}>
-                <div className={styles.meta}>
-                  <span className={styles.org}>{entry.organization}</span>
-                  <time className={styles.period}>{entry.period}</time>
-                </div>
-                <p className={styles.role}>{entry.role}</p>
-                {entry.details && (
-                  <p className={styles.details}>{entry.details}</p>
-                )}
-              </div>
-            </li>
+
+        <div className={styles.featured}>
+          {featuredRoles.map((role) => (
+            <article
+              key={role.id}
+              className={styles.panel}
+              aria-labelledby={`experience-${role.id}-chrome`}
+            >
+              <header className={styles.chrome} id={`experience-${role.id}-chrome`}>
+                {role.chrome}
+              </header>
+
+              {role.leadBeat && (
+                <p className={styles.leadBeat}>{role.leadBeat}</p>
+              )}
+
+              {role.caseStudyLinks && (
+                <p className={styles.links}>
+                  {role.caseStudyLinks.map((link, i) => (
+                    <span key={link.href}>
+                      {i > 0 && <span className={styles.linkSep}> · </span>}
+                      <a href={link.href} className={styles.caseLink}>
+                        {link.label}
+                      </a>
+                    </span>
+                  ))}
+                </p>
+              )}
+
+              {role.fields && (
+                <dl className={styles.fields}>
+                  {role.fields.map((field) => (
+                    <div key={field.label} className={styles.field}>
+                      <dt>{field.label}</dt>
+                      <dd>{field.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              )}
+            </article>
           ))}
-        </ol>
-        <div className={styles.education}>
-          <h3 className={styles.eduHeading}>education</h3>
-          <ul className={styles.eduList}>
-            {educationEntries.map((edu) => (
-              <li key={edu.institution} className={styles.eduItem}>
-                <span className={styles.eduDegree}>{edu.degree}</span>
-                <span className={styles.eduInst}>{edu.institution}</span>
-              </li>
-            ))}
-          </ul>
         </div>
+
+        <ul className={styles.rows} aria-label="Earlier roles and education">
+          {earlierRows.map((row) => (
+            <li key={row} className={styles.row}>{row}</li>
+          ))}
+          {educationRows.map((row) => (
+            <li key={row} className={styles.row}>{row}</li>
+          ))}
+        </ul>
       </div>
     </section>
   );

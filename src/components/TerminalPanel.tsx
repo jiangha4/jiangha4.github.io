@@ -8,7 +8,7 @@ interface TerminalPanelProps {
 
 export function TerminalPanel({ panel, index }: TerminalPanelProps) {
   return (
-    <article className={styles.panel} aria-labelledby={`work-${panel.id}-title`}>
+    <article id={`work-${panel.id}`} className={styles.panel} aria-labelledby={`work-${panel.id}-title`}>
       <header className={styles.header}>
         <span className={styles.index} aria-hidden="true">
           {String(index + 1).padStart(2, '0')}
