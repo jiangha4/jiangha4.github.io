@@ -1,0 +1,44 @@
+name: Configure GitHub Pages
+
+# One-shot / recovery: switch Pages to Actions and prefer `main` as default.
+# The Cursor App token cannot call these admin APIs; GITHUB_TOKEN in Actions can
+# update Pages when the workflow has `pages: write`.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+jobs:
+  configure:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set Pages build_type to workflow
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          gh api -X PUT "repos/${GITHUB_REPOSITORY}/pages" -f build_type=workflow
+          echo "Pages settings:"
+          gh api "repos/${GITHUB_REPOSITORY}/pages"
+
+      - name: Rename default branch master to main
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -uo pipefail
+          if gh api "repos/${GITHUB_REPOSITORY}" --jq .default_branch | grep -qx main; then
+            echo "Default branch is already main"
+            exit 0
+          fi
+          if gh api -X POST "repos/${GITHUB_REPOSITORY}/branches/master/rename" -f new_name=main; then
+            echo "Renamed master -> main"
+            exit 0
+          fi
+          echo "Rename failed; trying default_branch=main (main already exists)"
+          gh api -X PATCH "repos/${GITHUB_REPOSITORY}" -f default_branch=main || {
+            echo "GITHUB_TOKEN cannot change the default branch"
+            gh api "repos/${GITHUB_REPOSITORY}" --jq '{default_branch}'
+            exit 0
+          }
