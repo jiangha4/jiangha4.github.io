@@ -3,7 +3,7 @@
 Guide for AI agents and contributors working on David Jiang’s hiring-facing personal site.
 
 **Live:** https://jiangha4.github.io/  
-**Default branch:** `master`  
+**Default branch:** `main`  
 **Deploy:** GitHub Actions → Pages (not “Deploy from a branch”). See `.github/workflows/deploy.yml`.
 
 ---
@@ -17,7 +17,7 @@ npm run lint
 npm run build   # output: dist/
 ```
 
-Before finishing a change: `npm run lint && npm run build` must pass. CI runs the same on push to `master`.
+Before finishing a change: `npm run lint && npm run build` must pass. CI runs the same on push to `main`.
 
 **After every change:** add a concise entry to `CHANGELOG.md` under `[Unreleased]` (see [Changelog](#changelog) below).
 
@@ -162,7 +162,7 @@ Edit `.github/workflows/deploy.yml`. Required permissions: `pages: write`, `id-t
 ## GitHub Pages constraints
 
 - This is a **user site** (`username.github.io`). Vite `base` must stay `'/'`.
-- **Never merge source-only changes to `master` without a working Actions deploy** — the old “static files on master” model is replaced by Actions publishing `dist/`.
+- **Never merge source-only changes to `main` without a working Actions deploy** — the old “static files on master” model is replaced by Actions publishing `dist/`.
 - After first merge, repo owner must set **Settings → Pages → Source: GitHub Actions**.
 
 ---

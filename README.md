@@ -21,9 +21,9 @@ npm run preview # preview production build locally
 
 ## GitHub Pages deployment
 
-This repo uses **GitHub Actions** to build and deploy the Vite app on every push to `master` (or `main`).
+This repo uses **GitHub Actions** to build and deploy the Vite app on every push to `main`.
 
-1. Merge changes to `master`.
+1. Merge changes to `main`.
 2. In the repository **Settings → Pages**, set **Source** to **GitHub Actions** (not “Deploy from a branch”).
 3. The workflow in `.github/workflows/deploy.yml` runs `npm ci`, `npm run lint`, and `npm run build`, then publishes the `dist/` artifact via the official Pages deploy actions.
 

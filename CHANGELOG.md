@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
+- Deploy workflow and docs now treat `main` as the default branch; Pages is expected to publish from GitHub Actions, not a branch source.
 - Experience layout C (designer lock): year rail **2025 / 2020 / 2019 / 2016** (no 2026 mark); filled nodes on Nike III + Nike II; hollow on Future State + BeyondSoft; Nike II heaviest node (team, Referee, Cerberus/China, Jeter foundation); Nike III lead beat + case-study links; education under rail; rail structure only (no A-style cards).
 - Motion lock: single fixed full-viewport rain (drop 0.2, fade 0.025); scroll-in glyph decode for below-fold sections at 20% intersection.
 - Hero first-paint role line: `Staff data platform engineer` (designer sign-off).
