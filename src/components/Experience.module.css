@@ -8,160 +8,252 @@
   margin: 0 auto;
 }
 
-.timeline {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  position: relative;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 0.4rem;
-  top: 0.5rem;
-  bottom: 0.5rem;
-  width: 1px;
-  background: var(--color-chrome-dim);
-}
-
-.entry {
-  position: relative;
-  padding-left: 2rem;
-  padding-bottom: 1.5rem;
-}
-
-.entry:last-child {
-  padding-bottom: 0;
-}
-
-.marker {
-  position: absolute;
-  left: 0;
-  top: 0.35rem;
-  width: 0.85rem;
-  height: 0.85rem;
-  border: 1px solid var(--color-chrome);
-  border-radius: var(--radius-panel);
-  background: var(--color-bg);
-}
-
-.card {
-  border: var(--border-hairline);
-  border-radius: var(--radius-panel);
-  padding: 1rem 1.25rem;
-  background: rgba(11, 61, 31, 0.08);
-}
-
-.meta {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 0.5rem;
-  margin-bottom: 0.35rem;
-}
-
-.org {
+.heading {
+  font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+  color: var(--color-chrome);
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
   font-family: var(--font-mono);
-  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25;
+  margin: 0 0 1.25rem;
+}
+
+.timelineWrap {
+  margin-bottom: 1.5rem;
+}
+
+.timelineRows {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.railLine {
+  position: absolute;
+  left: 1.625rem;
+  top: 0.35rem;
+  bottom: 0.35rem;
+  width: 1px;
+  background: var(--color-chrome-mid);
+}
+
+.timelineRow {
+  display: grid;
+  grid-template-columns: 3.25rem 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.timelineRowHeavy {
+  gap: 1.5rem;
+  padding-bottom: 0.25rem;
+}
+
+.railCell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  z-index: 1;
+}
+
+.railYear {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
   color: var(--color-chrome);
   font-weight: 500;
+  line-height: 1;
 }
 
-.period {
+.node {
+  border-radius: var(--radius-panel);
+  flex-shrink: 0;
+}
+
+.nodeFilled {
+  width: 0.55rem;
+  height: 0.55rem;
+  background: var(--color-chrome);
+  border: 1px solid var(--color-chrome);
+}
+
+.nodeHollow {
+  width: 0.5rem;
+  height: 0.5rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-chrome);
+}
+
+.nodeHeavy {
+  width: 0.85rem;
+  height: 0.85rem;
+  background: var(--color-chrome);
+  border: 1px solid var(--color-chrome);
+  box-shadow: 0 0 10px rgba(var(--rain-rgb), 0.35);
+}
+
+.rowBody {
+  min-width: 0;
+}
+
+.entryContent {
+  padding-top: 0.05rem;
+}
+
+.entryContentHeavy {
+  padding-top: 0.05rem;
+  padding-left: 0.25rem;
+  border-left: 2px solid rgba(var(--rain-rgb), 0.22);
+}
+
+.entryHeader {
+  margin-bottom: 0.55rem;
+}
+
+.entryTitle {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-chrome);
+  margin: 0;
+  line-height: 1.35;
+}
+
+.entryPeriod {
   font-family: var(--font-mono);
   font-size: 0.7rem;
   color: var(--color-text-muted);
+  margin: 0.2rem 0 0;
 }
 
-.role {
+.leadBeat {
   font-size: 0.9375rem;
-  margin: 0;
   color: var(--color-text);
-}
-
-.details {
-  margin: 0.5rem 0 0;
-  font-size: 0.875rem;
-  color: var(--color-text-muted);
   line-height: 1.55;
+  margin: 0 0 0.65rem;
 }
 
-.supporting {
-  margin-bottom: 1.75rem;
-  padding: 1rem 1.25rem;
-  border: var(--border-hairline);
-  border-radius: var(--radius-panel);
-  background: rgba(11, 61, 31, 0.05);
+.links {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  margin: 0;
+  line-height: 1.5;
 }
 
-.supportingHeading {
+.linkSep {
+  color: var(--color-chrome-dim);
+}
+
+.caseLink {
+  color: var(--color-chrome);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-chrome-mid);
+}
+
+.caseLink:hover,
+.caseLink:focus-visible {
+  color: var(--color-text);
+  border-bottom-color: var(--color-chrome);
+}
+
+.fields {
+  margin: 0;
+}
+
+.field {
+  margin-bottom: 0.7rem;
+}
+
+.field:last-child {
+  margin-bottom: 0;
+}
+
+.field dt {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--color-chrome-mid);
+  text-transform: lowercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.2rem;
+}
+
+.field dd {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+.lineEntry {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  line-height: 1.45;
+  margin: 0;
+  padding: 0.2rem 0;
+}
+
+.educationBelow {
+  padding-top: 1rem;
+  border-top: var(--border-hairline);
+}
+
+.educationHeading {
   font-family: var(--font-mono);
   font-size: 0.75rem;
   color: var(--color-chrome-mid);
   text-transform: lowercase;
   letter-spacing: 0.06em;
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.65rem;
 }
 
-.supportingBlurb {
-  font-size: 0.8125rem;
-  color: var(--color-text-muted);
-  line-height: 1.55;
-  margin: 0;
-}
-
-.education {
-  margin-top: 2.5rem;
-  border: var(--border-hairline);
-  border-radius: var(--radius-panel);
-  padding: 1.25rem 1.5rem;
-  background: rgba(11, 61, 31, 0.06);
-}
-
-.eduHeading {
-  font-family: var(--font-mono);
-  font-size: 0.8125rem;
-  color: var(--color-chrome-mid);
-  text-transform: lowercase;
-  letter-spacing: 0.06em;
-  margin: 0 0 1rem;
-}
-
-.eduList {
+.educationList {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.eduItem {
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
-  margin-bottom: 0.75rem;
-}
-
-.eduItem:last-child {
-  margin-bottom: 0;
-}
-
-.eduDegree {
-  font-size: 0.9375rem;
-  color: var(--color-text);
-}
-
-.eduInst {
+.educationRow {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   color: var(--color-text-muted);
+  padding: 0.45rem 0;
+  border-bottom: 1px solid rgba(var(--rain-rgb), 0.08);
+  line-height: 1.45;
+}
+
+.educationRow:last-child {
+  border-bottom: none;
 }
 
 @media (min-width: 768px) {
-  .timeline::before {
-    left: 0.5rem;
+  .timelineRow {
+    grid-template-columns: 3.5rem 1fr;
+    gap: 1.5rem;
   }
 
-  .entry {
-    padding-left: 2.5rem;
+  .railLine {
+    left: 1.75rem;
+  }
+
+  .timelineRows {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .timelineRow {
+    grid-template-columns: 2.75rem 1fr;
+    gap: 1rem;
+  }
+
+  .railLine {
+    left: 1.375rem;
+  }
+
+  .railYear {
+    font-size: 0.62rem;
   }
 }

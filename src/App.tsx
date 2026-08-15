@@ -6,10 +6,12 @@ import { Stack } from './components/Stack';
 import { Experience } from './components/Experience';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
+import { MatrixRain } from './components/MatrixRain';
 
 function App() {
   return (
     <>
+      <MatrixRain />
       <a href="#signal" className="skip-link">Skip to content</a>
       <Navigation />
       <main>

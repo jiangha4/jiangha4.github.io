@@ -70,13 +70,13 @@ Before finishing a change: `npm run lint && npm run build` must pass. CI runs th
 | `Work` | `#work` | Two case-study `TerminalPanel`s + one `ReservedPanel` placeholder |
 | `Signal` | `#signal` | Jeter platform lead story (staff-scope, outcomes-first) |
 | `Stack` | `#stack` | 11-item fold list (`<details>`); no ticker or chip wall |
-| `Experience` | `#experience` | Timeline + education |
+| `Experience` | `#experience` | Year rail 2025/2020/2019/2016 (layout C); filled/hollow/heavy nodes; education below rail |
 | `Contact` | `#contact` | mailto + external links only |
 | `Footer` | — | Copyright + repo source link |
 
 Shared primitives:
 
-- `MatrixRain` — canvas digital rain (hero + work backdrop; background layer only)
+- `MatrixRain` — fixed full-viewport canvas; sparse glyph field (20% cells, α 0.10) + rain heads (drop 0.2, fade 0.025)
 - `TerminalPanel` — work card layout (problem / built / outcome)
 - `ReservedPanel` — placeholder for forthcoming flagship case study
 
@@ -99,12 +99,14 @@ Use CSS custom properties in `globals.css`; section-specific layout in `*.module
 
 | Feature | Normal | `prefers-reduced-motion: reduce` |
 |---------|--------|----------------------------------|
-| Matrix rain | rAF canvas animation (background only) | Static glyph field (paused) |
+| Matrix rain | Single fixed full-viewport canvas, rAF | Static glyph field (no falling) |
+| Below-fold sections | Glyph decode on 20% intersection (28ms/glyph, 700ms max/line, 80ms line stagger) | Real copy immediately |
 | Stack fold list | `<details>` expand/collapse | Same (no marquee) |
 
 Additional rules:
 
-- Rain is a **background layer only** — never on top of type; hero staff line is static on first paint (no typewriter)
+- Rain is **one** full-bleed fixed canvas behind all content — no per-section rain instances
+- Hero staff line is **real text on first paint** — never decode the hero
 - Rain pauses when `document.visibilityState === 'hidden'`
 - Throttle rain on small screens (`max-width: 640px`) and when `navigator.connection.saveData` is true
 - Hero uses `intensity="full"`; work section uses `intensity="faint"`

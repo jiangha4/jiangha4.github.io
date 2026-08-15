@@ -1,4 +1,5 @@
 import { reservedWorkPanel } from '../content';
+import { DecodeLine } from '../hooks/useSectionDecode';
 import styles from './ReservedPanel.module.css';
 
 type ReservedPanelData = typeof reservedWorkPanel;
@@ -20,15 +21,17 @@ export function ReservedPanel({ panel, index }: ReservedPanelProps) {
           {String(index + 1).padStart(2, '0')}
         </span>
         <div>
-          <p className={styles.chrome}>{panel.chrome}</p>
-          <h3 id={`work-${panel.id}-title`} className={styles.label}>
+          <DecodeLine as="p" className={styles.chrome}>
+            {panel.chrome}
+          </DecodeLine>
+          <DecodeLine as="h3" id={`work-${panel.id}-title`} className={styles.label}>
             {panel.label}
-          </h3>
+          </DecodeLine>
         </div>
       </header>
-      <p id={`work-${panel.id}-note`} className={styles.note}>
+      <DecodeLine as="p" id={`work-${panel.id}-note`} className={styles.note}>
         {panel.note}
-      </p>
+      </DecodeLine>
     </article>
   );
 }

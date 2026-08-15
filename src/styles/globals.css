@@ -60,6 +60,11 @@ body::after {
   z-index: 1;
 }
 
+main {
+  position: relative;
+  z-index: 1;
+}
+
 :focus-visible {
   outline: var(--focus-ring);
   outline-offset: var(--focus-offset);

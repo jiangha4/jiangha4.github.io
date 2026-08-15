@@ -77,10 +77,134 @@ export const reservedWorkPanel = {
   note: 'Reserved for a future public flagship write-up of the AI coding spend lakehouse.',
 };
 
-export const supportingSystems = {
-  heading: 'supporting systems',
-  blurb:
-    'Referee — automated canary analysis for AWS ECS and EC2 on customer-facing revenue apps. Cerberus — Java Spring Boot secrets manager spanning AWS Commercial and AWS China (including China rollout). Prior production platform work; not the public flagship story.',
+export interface ExperienceField {
+  label: string;
+  value: string;
+}
+
+export interface ExperienceCaseStudyLink {
+  label: string;
+  href: string;
+}
+
+export interface ExperienceRailMark {
+  year: string;
+  node: 'filled' | 'hollow';
+  heavy?: boolean;
+}
+
+export interface ExperienceNikeIIIEntry {
+  id: string;
+  kind: 'nike-iii';
+  yearMark: string;
+  node: 'filled';
+  title: string;
+  period: string;
+  leadBeat: string;
+  caseStudyLinks: ExperienceCaseStudyLink[];
+}
+
+export interface ExperienceNikeIIEntry {
+  id: string;
+  kind: 'nike-ii';
+  yearMark: string;
+  yearEnd?: string;
+  node: 'filled';
+  heavy: true;
+  title: string;
+  period: string;
+  fields: ExperienceField[];
+}
+
+export interface ExperienceLineEntry {
+  id: string;
+  kind: 'line';
+  yearMark: string;
+  yearEnd?: string;
+  node: 'hollow';
+  line: string;
+}
+
+export type ExperienceEntry =
+  | ExperienceNikeIIIEntry
+  | ExperienceNikeIIEntry
+  | ExperienceLineEntry;
+
+export const experienceContent = {
+  railMarks: [
+    { year: '2025', node: 'filled' },
+    { year: '2020', node: 'filled', heavy: true },
+    { year: '2019', node: 'hollow' },
+    { year: '2016', node: 'hollow' },
+  ] satisfies ExperienceRailMark[],
+  entries: [
+    {
+      id: 'nike-iii',
+      kind: 'nike-iii',
+      yearMark: '2025',
+      node: 'filled',
+      title: 'Nike · Software Engineer III, lead engineer, Jeter',
+      period: 'Nov 2025 – present',
+      leadBeat:
+        'Sets technical direction for Jeter — lakehouse migration, multi-store serving architecture, and production AI analytics that informed company-wide licensing.',
+      caseStudyLinks: [
+        { label: 'lakehouse migration', href: '#work-lakehouse' },
+        { label: 'AI spend lakehouse', href: '#work-ai-coding-spend' },
+      ],
+    },
+    {
+      id: 'nike-ii',
+      kind: 'nike-ii',
+      yearMark: '2020',
+      yearEnd: '2025',
+      node: 'filled',
+      heavy: true,
+      title: 'Nike · Software Engineer II',
+      period: 'Mar 2020 – Nov 2025',
+      fields: [
+        {
+          label: 'team',
+          value:
+            'Mixed team of up to 6: on-site FTEs, contractors, remote engineers in Poland and South America; quarterly planning, work split across time zones.',
+        },
+        {
+          label: 'Referee',
+          value:
+            'Automated canary analysis for AWS ECS and EC2 on customer-facing revenue apps.',
+        },
+        {
+          label: 'Cerberus / China',
+          value:
+            'Java Spring Boot secrets manager spanning AWS Commercial and AWS China (including China rollout).',
+        },
+        {
+          label: 'Jeter foundation',
+          value:
+            '2025: Workday/AD hierarchy, manager-level reporting, domain model that became the platform.',
+        },
+      ],
+    },
+    {
+      id: 'future-state',
+      kind: 'line',
+      yearMark: '2019',
+      yearEnd: '2020',
+      node: 'hollow',
+      line: 'Future State Consulting — Senior Software Engineer · Apr 2019 – Mar 2020 · onsite Nike WHQ',
+    },
+    {
+      id: 'beyondsoft',
+      kind: 'line',
+      yearMark: '2016',
+      yearEnd: '2019',
+      node: 'hollow',
+      line: 'BeyondSoft — Software Engineer · Feb 2016 – Apr 2019 · HP contractor',
+    },
+  ] satisfies ExperienceEntry[],
+  educationRows: [
+    'M.S. CS (Machine Learning), Portland State University',
+    'B.S. CS, University of Toronto, St. George',
+  ],
 };
 
 export const stackContent = {
@@ -100,58 +224,6 @@ export const stackItems = [
   'AppSync',
   'Python',
   'SQL',
-];
-
-export interface ExperienceEntry {
-  id: string;
-  organization: string;
-  role: string;
-  period: string;
-  details?: string;
-}
-
-export const experienceEntries: ExperienceEntry[] = [
-  {
-    id: 'nike-iii',
-    organization: 'Nike',
-    role: 'Software Engineer III, lead engineer, Jeter',
-    period: 'Nov 2025 – present',
-  },
-  {
-    id: 'nike-ii',
-    organization: 'Nike',
-    role: 'Software Engineer II',
-    period: 'Mar 2020 – Nov 2025',
-    details:
-      'Tech-led a mixed team of up to 6 (on-site FTEs, contractors, remote engineers in Poland and South America). Built Referee and Cerberus; foundational Jeter data platform work in 2025.',
-  },
-  {
-    id: 'future-state',
-    organization: 'Future State Consulting',
-    role: 'Senior Software Engineer',
-    period: 'Apr 2019 – Mar 2020',
-    details:
-      'Onsite at Nike WHQ. Golden AMIs, Debian packages, internal platform tools.',
-  },
-  {
-    id: 'beyondsoft',
-    organization: 'BeyondSoft',
-    role: 'Software Engineer',
-    period: 'Feb 2016 – Apr 2019',
-    details:
-      'Onsite contractor for HP. Python automation, Raspberry Pi Bluetooth/Wi-Fi testing.',
-  },
-];
-
-export const educationEntries = [
-  {
-    degree: 'M.S. Computer Science (Machine Learning)',
-    institution: 'Portland State University',
-  },
-  {
-    degree: 'B.S. Computer Science',
-    institution: 'University of Toronto, St. George',
-  },
 ];
 
 export const contactContent = {
