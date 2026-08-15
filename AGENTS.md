@@ -19,12 +19,37 @@ npm run build   # output: dist/
 
 Before finishing a change: `npm run lint && npm run build` must pass. CI runs the same on push to `master`.
 
+**After every change:** add a concise entry to `CHANGELOG.md` under `[Unreleased]` (see [Changelog](#changelog) below).
+
+---
+
+## Changelog
+
+**Required.** Every agent session that modifies the repo must update `CHANGELOG.md` before finishing.
+
+1. Open `CHANGELOG.md` and edit the **`[Unreleased]`** section (create it if missing).
+2. Add one or more bullets under the right category: `Added`, `Changed`, `Fixed`, `Removed`, `Security`.
+3. Keep each bullet **one line**, outcome-focused — what changed and why it matters, not file lists.
+4. Do not duplicate the full PR description; one bullet per logical change is enough.
+5. When a release is tagged, move `[Unreleased]` items into a dated version section.
+
+**Example:**
+
+```markdown
+## [Unreleased]
+
+### Changed
+- Tightened Signal paragraph wording; copy still sourced from `content.ts`.
+```
+
 ---
 
 ## Repository map
 
 | Path | Role |
 |------|------|
+| `CHANGELOG.md` | **Required change log** — concise `[Unreleased]` entries after every agent edit |
+| `AGENTS.md` | Agent navigation and design decisions (this file) |
 | `src/content.ts` | **All user-facing copy** — nav labels, hero boot lines, signal paragraph, work panels, stack list, experience, contact, meta strings |
 | `src/App.tsx` | Page shell: skip link, nav, section order, footer |
 | `src/main.tsx` | React entry; imports `styles/globals.css` |
@@ -149,6 +174,7 @@ Blog, CMS, backend, auth, 3D WebGL, analytics pixels, contact forms, phone numbe
 
 ## Verification checklist
 
+- [ ] `CHANGELOG.md` updated under `[Unreleased]` with concise bullet(s)
 - [ ] `npm run lint` passes
 - [ ] `npm run build` succeeds
 - [ ] Copy changes only in `content.ts` (or new typed content modules under `src/content/`)
