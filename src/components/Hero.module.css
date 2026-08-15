@@ -1,0 +1,113 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.rainWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.rain {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - var(--nav-height));
+  min-height: calc(100dvh - var(--nav-height));
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+  width: 100%;
+}
+
+.terminal {
+  max-width: 40rem;
+  padding: 1.25rem 1.5rem;
+  border: var(--border-hairline);
+  border-radius: var(--radius-panel);
+  background: rgba(5, 8, 5, 0.94);
+  box-shadow: 0 0 0 1px rgba(var(--rain-rgb), 0.06);
+}
+
+.name {
+  font-family: var(--font-mono);
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 600;
+  color: var(--color-chrome);
+  margin: 0 0 0.5rem;
+  line-height: 1.2;
+}
+
+.role {
+  font-family: var(--font-mono);
+  font-size: clamp(0.9375rem, 2vw, 1.0625rem);
+  color: var(--color-text);
+  margin: 0 0 0.35rem;
+}
+
+.lead {
+  font-family: var(--font-mono);
+  font-size: clamp(0.875rem, 1.8vw, 1rem);
+  color: var(--color-text-muted);
+  margin: 0 0 0.35rem;
+  line-height: 1.45;
+}
+
+.themes {
+  font-family: var(--font-mono);
+  font-size: clamp(0.8125rem, 1.6vw, 0.9375rem);
+  color: var(--color-chrome-mid);
+  margin: 0.5rem 0 0;
+  line-height: 1.45;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.action {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--color-chrome);
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border: var(--border-hairline);
+  border-radius: var(--radius-panel);
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.action:hover,
+.action:focus-visible {
+  background: rgba(var(--rain-rgb), 0.1);
+  border-color: var(--color-chrome);
+  color: var(--color-chrome);
+}
+
+@media (min-width: 768px) {
+  .content {
+    padding: 3rem 2rem 4rem;
+  }
+
+  .terminal {
+    padding: 1.5rem 2rem;
+  }
+}
