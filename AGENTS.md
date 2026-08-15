@@ -70,7 +70,7 @@ Before finishing a change: `npm run lint && npm run build` must pass. CI runs th
 | `Work` | `#work` | Two case-study `TerminalPanel`s + one `ReservedPanel` placeholder |
 | `Signal` | `#signal` | Jeter platform lead story (staff-scope, outcomes-first) |
 | `Stack` | `#stack` | 11-item fold list (`<details>`); no ticker or chip wall |
-| `Experience` | `#experience` | Two featured role panels (Nike III + II) + one-line rows for earlier roles/education |
+| `Experience` | `#experience` | Year rail 2016→2026 (layout C) + beats aligned to marks |
 | `Contact` | `#contact` | mailto + external links only |
 | `Footer` | — | Copyright + repo source link |
 

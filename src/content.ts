@@ -82,19 +82,70 @@ export interface ExperienceField {
   value: string;
 }
 
-export interface FeaturedExperienceRole {
-  id: string;
-  chrome: string;
-  leadBeat?: string;
-  caseStudyLinks?: { label: string; href: string }[];
-  fields?: ExperienceField[];
+export interface ExperienceCaseStudyLink {
+  label: string;
+  href: string;
 }
 
+export interface ExperienceRailMark {
+  year: string;
+  sublabel?: string;
+}
+
+export interface ExperienceNikeIIIEntry {
+  id: string;
+  kind: 'nike-iii';
+  yearMark: string;
+  yearSublabel?: string;
+  title: string;
+  period: string;
+  leadBeat: string;
+  caseStudyLinks: ExperienceCaseStudyLink[];
+}
+
+export interface ExperienceNikeIIEntry {
+  id: string;
+  kind: 'nike-ii';
+  yearMark: string;
+  yearEnd?: string;
+  title: string;
+  period: string;
+  fields: ExperienceField[];
+}
+
+export interface ExperienceLineEntry {
+  id: string;
+  kind: 'line';
+  yearMark: string;
+  yearEnd?: string;
+  line: string;
+}
+
+export type ExperienceEntry =
+  | ExperienceNikeIIIEntry
+  | ExperienceNikeIIEntry
+  | ExperienceLineEntry;
+
 export const experienceContent = {
-  featuredRoles: [
+  rail: {
+    startYear: 2016,
+    endYear: 2026,
+    marks: [
+      { year: '2016' },
+      { year: '2019' },
+      { year: '2020' },
+      { year: '2025' },
+      { year: '2026', sublabel: 'present' },
+    ] satisfies ExperienceRailMark[],
+  },
+  entries: [
     {
       id: 'nike-iii',
-      chrome: 'Nike · Software Engineer III, lead engineer, Jeter · Nov 2025 – present',
+      kind: 'nike-iii',
+      yearMark: '2026',
+      yearSublabel: 'present',
+      title: 'Nike · Software Engineer III, lead engineer, Jeter',
+      period: 'Nov 2025 – present',
       leadBeat:
         'Sets technical direction for Jeter — lakehouse migration, multi-store serving architecture, and production AI analytics that informed company-wide licensing.',
       caseStudyLinks: [
@@ -104,7 +155,11 @@ export const experienceContent = {
     },
     {
       id: 'nike-ii',
-      chrome: 'Nike · Software Engineer II · Mar 2020 – Nov 2025',
+      kind: 'nike-ii',
+      yearMark: '2020',
+      yearEnd: '2025',
+      title: 'Nike · Software Engineer II',
+      period: 'Mar 2020 – Nov 2025',
       fields: [
         {
           label: 'team',
@@ -128,11 +183,21 @@ export const experienceContent = {
         },
       ],
     },
-  ] satisfies FeaturedExperienceRole[],
-  earlierRows: [
-    'Future State Consulting — Senior Software Engineer · Apr 2019 – Mar 2020 · onsite Nike WHQ',
-    'BeyondSoft — Software Engineer · Feb 2016 – Apr 2019 · HP contractor',
-  ],
+    {
+      id: 'future-state',
+      kind: 'line',
+      yearMark: '2019',
+      yearEnd: '2020',
+      line: 'Future State Consulting — Senior Software Engineer · Apr 2019 – Mar 2020 · onsite Nike WHQ',
+    },
+    {
+      id: 'beyondsoft',
+      kind: 'line',
+      yearMark: '2016',
+      yearEnd: '2019',
+      line: 'BeyondSoft — Software Engineer · Feb 2016 – Apr 2019 · HP contractor',
+    },
+  ] satisfies ExperienceEntry[],
   educationRows: [
     'M.S. CS (Machine Learning), Portland State University',
     'B.S. CS, University of Toronto, St. George',
