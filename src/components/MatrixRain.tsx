@@ -5,7 +5,7 @@ import styles from './MatrixRain.module.css';
 
 const RAIN_RGB = '61, 204, 122';
 const DROP_STEP = 0.2;
-const FADE_ALPHA = 0.04;
+const FADE_ALPHA = 0.025;
 
 export function MatrixRain() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -22,6 +22,7 @@ export function MatrixRain() {
 
     let animationId = 0;
     let columns = 0;
+    let rows = 0;
     let drops: number[] = [];
     let fontSize = 14;
     let paused = false;
@@ -31,7 +32,8 @@ export function MatrixRain() {
       canvas.height = window.innerHeight;
       fontSize = isSmall ? 12 : 14;
       columns = Math.floor(canvas.width / fontSize);
-      drops = Array.from({ length: columns }, () => Math.random() * -50);
+      rows = Math.ceil(canvas.height / fontSize);
+      drops = Array.from({ length: columns }, () => Math.random() * rows);
     };
 
     const drawStaticField = () => {
@@ -66,7 +68,7 @@ export function MatrixRain() {
         ctx.fillText(ch, x, y);
 
         if (y > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
+          drops[i] = Math.random() * rows;
         }
         drops[i] += dropStep;
       }

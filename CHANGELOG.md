@@ -8,7 +8,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
-- Motion lock: single fixed full-viewport rain (drop 0.2, fade 0.04); scroll-in glyph decode for below-fold sections at 20% intersection.
+- Rain full-bleed fix: seed drops across full canvas height; fade 0.025.
+- Motion lock: single fixed full-viewport rain (drop 0.2, fade 0.025); scroll-in glyph decode for below-fold sections at 20% intersection.
 - Experience section: two featured Nike panels (III links to case studies; II four-field layout) + one-line rows for earlier roles and education.
 - Hero first-paint role line: `Staff data platform engineer` (designer sign-off).
 - Locked chrome accent to `#3dcc7a` across borders, rain glyphs, focus rings, and favicon.
