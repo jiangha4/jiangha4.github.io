@@ -87,6 +87,30 @@
   line-height: 1.55;
 }
 
+.supporting {
+  margin-bottom: 1.75rem;
+  padding: 1rem 1.25rem;
+  border: var(--border-hairline);
+  border-radius: var(--radius-panel);
+  background: rgba(11, 61, 31, 0.05);
+}
+
+.supportingHeading {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-chrome-mid);
+  text-transform: lowercase;
+  letter-spacing: 0.06em;
+  margin: 0 0 0.5rem;
+}
+
+.supportingBlurb {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
 .education {
   margin-top: 2.5rem;
   border: var(--border-hairline);

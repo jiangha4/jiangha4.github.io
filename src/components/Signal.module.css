@@ -1,0 +1,55 @@
+.section {
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+
+.inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+
+.jeterPanel {
+  border: var(--border-hairline);
+  border-radius: var(--radius-panel);
+  padding: 1.5rem;
+  background: rgba(11, 61, 31, 0.1);
+}
+
+.jeterHeader {
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-chrome-dim);
+}
+
+.jeterName {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-chrome);
+  margin: 0;
+  line-height: 1.35;
+}
+
+.jeterType {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin: 0.35rem 0 0;
+}
+
+.body {
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--color-text);
+  margin: 0 0 1rem;
+}
+
+.body:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .jeterPanel {
+    padding: 1.75rem 2rem;
+  }
+}

@@ -1,0 +1,55 @@
+.panel {
+  border: var(--border-hairline);
+  border-radius: var(--radius-panel);
+  padding: 1.25rem 1.5rem;
+  background: rgba(5, 8, 5, 0.6);
+  border-style: dashed;
+  border-color: var(--color-chrome-dim);
+  min-height: 12rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.index {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-chrome-mid);
+  flex-shrink: 0;
+}
+
+.chrome {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--color-chrome-mid);
+  margin: 0 0 0.35rem;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.note {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-chrome-dim);
+  line-height: 1.5;
+  margin: 0;
+  flex: 1;
+}
+
+@media (min-width: 768px) {
+  .panel {
+    padding: 1.5rem 1.75rem;
+  }
+}

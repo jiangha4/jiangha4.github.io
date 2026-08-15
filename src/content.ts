@@ -1,7 +1,7 @@
 export const siteMeta = {
   title: 'David Jiang — Data Platform Engineer',
   description:
-    'David Jiang is a data platform engineer and the lead engineer on Jeter, Nike’s developer intelligence platform. He owns TB-scale ingestion, medallion lakehouse ETL on Databricks and Glue, and a multi-store serving layer across Neptune, DynamoDB, OpenSearch, and Aurora MySQL.',
+    'David Jiang is lead engineer on Jeter, Nike’s developer intelligence platform — TB-scale lakehouse ingestion, multi-store serving, and production AI analytics that informed a $2.25M company-wide licensing decision.',
   url: 'https://jiangha4.github.io/',
   ogImage: '/img/profile_picture.jpeg',
 };
@@ -18,11 +18,11 @@ export const heroContent = {
   bootLines: [
     '> identity.init()',
     '> DAVID JIANG',
-    '> data platform engineer',
-    '> lead engineer, Jeter · Nike',
+    '> data platform engineer · Nike',
+    '> lead engineer, Jeter — developer intelligence',
   ],
   proofLine:
-    'TB-scale ingestion · Databricks lakehouse · production AI analytics',
+    'Databricks lakehouse · TB-scale ingestion · production AI spend analytics',
   actions: [
     { label: 'work', target: 'work' },
     { label: 'contact', target: 'contact' },
@@ -48,9 +48,13 @@ export const scrollingLogs = [
 ];
 
 export const signalContent = {
-  heading: 'Signal',
-  paragraph:
-    'David Jiang is a data platform engineer and the lead engineer on Jeter, Nike’s developer intelligence platform. He owns TB-scale ingestion, medallion lakehouse ETL on Databricks and Glue, and a multi-store serving layer across Neptune, DynamoDB, OpenSearch, and Aurora MySQL. He set technical direction for a Databricks lakehouse migration that kept downstream consumers intact, and built the production analytics that informed a $2.25M company-wide AI licensing decision.',
+  heading: 'signal',
+  leadHeading: 'Jeter — developer intelligence platform',
+  leadType: 'staff-scope data platform (lead engineer)',
+  paragraphs: [
+    'David Jiang is lead engineer on Jeter, Nike’s developer intelligence platform: TB-scale ingestion, medallion lakehouse ETL on Databricks and Glue, multi-store serving across Neptune, DynamoDB, OpenSearch, and Aurora MySQL, federated GraphQL on AWS AppSync, and production observability across AppSync subgraphs and Lambda services targeting 99.9% availability.',
+    'Outcomes: productionized org-wide developer intelligence for 8,200+ people across six VP domains (k-means + random forest classification, Louvain community detection, ~287 squads from Jira/GitHub graphs); TB-scale ingestion from 12+ enterprise sources through Lambda → Kinesis Firehose → S3 bronze → Spark silver/gold; federated GraphQL merged API across nine subgraphs; standardized agent workflows and CODEOWNERS across 36 repos.',
+  ],
 };
 
 export interface WorkPanel {
@@ -62,52 +66,44 @@ export interface WorkPanel {
   outcome: string;
 }
 
-export const workPanels: WorkPanel[] = [
-  {
-    id: 'jeter',
-    name: 'Jeter',
-    type: 'developer intelligence platform (lead)',
-    problem:
-      'Nike needed a unified developer intelligence platform spanning ingestion, lakehouse ETL, multi-store serving, and federated GraphQL — with production observability and analytics at scale.',
-    built:
-      'Lead engineer across ingestion, lakehouse ETL, multi-store serving, federated GraphQL, and Grafana. Primary engineer across 55+ repositories; 270+ tickets in 10 months. TB-scale ingestion from 12+ enterprise sources (Lambda → Kinesis Firehose → S3 bronze → Spark silver/gold) into Neptune, DynamoDB, OpenSearch, and Aurora MySQL. Federated GraphQL on AWS AppSync (9 subgraphs, merged API). Observability across 10+ AppSync subgraphs and Lambda services (X-Ray, Lambda Powertools, CloudWatch, Grafana, alerting-as-code) targeting 99.9% availability.',
-    outcome:
-      'Productionized reporting for 8,200+ people across 6 VP domains (k-means + random forest classification, Louvain community detection, ~287 squads from Jira/GitHub graphs). Standardized agent workflows and CODEOWNERS across 36 repos.',
-  },
+/** Featured case studies only — not Jeter platform overview, not supporting systems. */
+export const caseStudyPanels: WorkPanel[] = [
   {
     id: 'lakehouse',
-    name: 'Lakehouse migration',
-    type: 'Glue → Databricks',
+    name: 'Glue → Databricks lakehouse migration',
+    type: 'Unity Catalog · Delta Lake · Delta Sharing',
     problem:
-      'GitHub, Workday, Active Directory, and Cursor ETL ran on AWS Glue — Nike needed a lakehouse migration without breaking downstream consumers.',
+      'GitHub, Workday, Active Directory, and Cursor ETL ran on AWS Glue. Nike needed a lakehouse migration without breaking Neptune, Aurora MySQL, OpenSearch, or DynamoDB consumers.',
     built:
-      'Designed and led technical planning to migrate GitHub, Workday, Active Directory, and Cursor ETL from AWS Glue to Databricks (Unity Catalog, Delta Lake, Auto Loader). Delta Sharing so Neptune, Aurora MySQL, OpenSearch, and DynamoDB consumers stayed intact with no API breaks.',
+      'Designed and led technical planning to migrate those pipelines to Databricks (Unity Catalog, Delta Lake, Auto Loader). Used Delta Sharing so every downstream store stayed intact — no API breaks.',
     outcome:
-      'Owned build-vs-buy and phased decommission of Glue pipelines.',
+      'Owned build-vs-buy analysis and phased Glue decommission while keeping production consumers online.',
   },
   {
-    id: 'ai-analytics',
-    name: 'AI tooling analytics',
+    id: 'ai-coding-spend',
+    name: 'AI coding spend lakehouse',
     type: 'Cursor & GitHub Copilot',
     problem:
-      'Leadership needed production analytics on AI tooling adoption, spend, and impact to inform company-wide licensing.',
+      'Leadership needed production-grade analytics on AI tooling adoption, token usage, model mix, AI code tracking, and PR activity to inform company-wide licensing.',
     built:
-      'End-to-end pipeline: adoption, token usage, model mix, AI code tracking, PR activity (bronze events → PySpark → MySQL → Grafana).',
+      'End-to-end lakehouse pipeline: bronze events → PySpark → MySQL → Grafana dashboards for adoption, spend, and scenario modeling.',
     outcome:
       'Q1 2026 AI spend report: $2.25M across 5,740 users, with seat-cap scenario modeling that informed company-wide licensing.',
   },
-  {
-    id: 'referee-cerberus',
-    name: 'Referee + Cerberus',
-    type: 'production platform systems',
-    problem:
-      'Customer-facing revenue apps needed automated canary analysis; secrets management required a cross-region platform including AWS China.',
-    built:
-      'Referee: automated canary analysis for AWS ECS and EC2, used on customer-facing revenue apps. Cerberus: Java Spring Boot secrets manager spanning AWS Commercial and AWS China (including China rollout).',
-    outcome:
-      'Both systems operated in production across commercial and China regions.',
-  },
 ];
+
+export const reservedWorkPanel = {
+  id: 'flagship-reserved',
+  chrome: '// spec forthcoming',
+  label: 'flagship case study — reserved',
+  note: 'Reserved for a future public flagship write-up of the AI coding spend lakehouse.',
+};
+
+export const supportingSystems = {
+  heading: 'supporting systems',
+  blurb:
+    'Referee — automated canary analysis for AWS ECS and EC2 on customer-facing revenue apps. Cerberus — Java Spring Boot secrets manager spanning AWS Commercial and AWS China (including China rollout). Prior production platform work; not the public flagship story.',
+};
 
 export const stackItems = [
   'Databricks',
@@ -165,7 +161,7 @@ export const experienceEntries: ExperienceEntry[] = [
     role: 'Software Engineer II',
     period: 'Mar 2020 – Nov 2025',
     details:
-      'Tech-led a mixed team of up to 6 (on-site FTEs, contractors, remote engineers in Poland and South America). Referee, Cerberus, foundational Jeter data work in 2025.',
+      'Tech-led a mixed team of up to 6 (on-site FTEs, contractors, remote engineers in Poland and South America). Built Referee and Cerberus; foundational Jeter data platform work in 2025.',
   },
   {
     id: 'future-state',

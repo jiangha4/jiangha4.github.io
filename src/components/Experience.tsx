@@ -1,4 +1,4 @@
-import { educationEntries, experienceEntries } from '../content';
+import { educationEntries, experienceEntries, supportingSystems } from '../content';
 import styles from './Experience.module.css';
 
 export function Experience() {
@@ -6,6 +6,12 @@ export function Experience() {
     <section id="experience" className={styles.experience} aria-labelledby="experience-heading">
       <div className={styles.inner}>
         <h2 id="experience-heading">experience</h2>
+        <aside className={styles.supporting} aria-labelledby="supporting-heading">
+          <h3 id="supporting-heading" className={styles.supportingHeading}>
+            {supportingSystems.heading}
+          </h3>
+          <p className={styles.supportingBlurb}>{supportingSystems.blurb}</p>
+        </aside>
         <ol className={styles.timeline}>
           {experienceEntries.map((entry) => (
             <li key={entry.id} className={styles.entry}>

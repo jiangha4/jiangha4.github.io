@@ -6,8 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+
+- Reshaped page for 30-second Staff data-platform hiring screen: hero and signal lead with Jeter platform scope; case studies grid is lakehouse migration + AI coding spend lakehouse + reserved placeholder panel.
+- Removed ticket/repo counts and Referee/Cerberus from featured work panels; supporting systems blurb moved to experience.
+
 ### Added
 
+- `ReservedPanel` component for the forthcoming flagship case study slot.
 - `CHANGELOG.md` with agent update rules; seeded with site rebuild history.
 - `AGENTS.md` — repo map, design system, motion/a11y rules, and verification checklist.
 

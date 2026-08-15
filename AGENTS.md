@@ -67,8 +67,8 @@ Before finishing a change: `npm run lint && npm run build` must pass. CI runs th
 |-----------|------------|--------|
 | `Navigation` | — | Sticky nav; mobile menu toggle |
 | `Hero` | — | Full-viewport rain, boot sequence, scrolling logs, CTAs |
-| `Signal` | `#signal` | Hiring-manager paragraph |
-| `Work` | `#work` | Four `TerminalPanel` cards; faint background rain |
+| `Work` | `#work` | Two case-study `TerminalPanel`s + one `ReservedPanel` placeholder |
+| `Signal` | `#signal` | Jeter platform lead story (staff-scope, outcomes-first) |
 | `Stack` | `#stack` | Marquee ticker + static chip list (SEO / reduced-motion) |
 | `Experience` | `#experience` | Timeline + education |
 | `Contact` | `#contact` | mailto + external links only |
