@@ -1,6 +1,6 @@
 :root {
   --color-bg: #050805;
-  --color-chrome: #3ddc84;
+  --color-chrome: #3dcc7a;
   --color-chrome-dim: #0f3322;
   --color-chrome-mid: #1e5c3f;
   --color-text: #e8efe9;
@@ -14,7 +14,7 @@
   --nav-height: 3rem;
   --section-gap: 4rem;
   --content-max: 72rem;
-  --rain-rgb: 61, 220, 132;
+  --rain-rgb: 61, 204, 122;
 }
 
 *,

@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { useIsSmallScreen, usePrefersReducedMotion, useSaveData } from '../hooks/useMediaPreferences';
 
 const GLYPHS = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEF';
-const RAIN_RGB = '61, 220, 132';
+const RAIN_RGB = '61, 204, 122';
 
 interface MatrixRainProps {
   className?: string;

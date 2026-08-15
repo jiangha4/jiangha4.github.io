@@ -8,17 +8,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
-- Design lock: static hero staff line (no BootSequence); rain background-only with dim phosphor `#3ddc84`; removed scanlines and scrolling log column.
+- Locked chrome accent to `#3dcc7a` across borders, rain glyphs, focus rings, and favicon.
+- Design lock: static hero staff line (no BootSequence); rain background-only with locked dim phosphor `#3dcc7a`; removed scanlines and scrolling log column.
 - Stack section is an 11-item fold list; removed ticker marquee and 33-chip wall.
-
-### Changed
-
-- Reshaped page for 30-second Staff data-platform hiring screen: hero and signal lead with Jeter platform scope; case studies grid is lakehouse migration + AI coding spend lakehouse + reserved placeholder panel.
-- Removed ticket/repo counts and Referee/Cerberus from featured work panels; supporting systems blurb moved to experience.
 
 ### Added
 
-- `ReservedPanel` component for the forthcoming flagship case study slot.
+- `docs/walkthrough.mp4` — ~22s PR walkthrough (hero first paint, signal, work panels, supporting systems).
 - `CHANGELOG.md` with agent update rules; seeded with site rebuild history.
 - `AGENTS.md` — repo map, design system, motion/a11y rules, and verification checklist.
 

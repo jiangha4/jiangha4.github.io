@@ -87,7 +87,7 @@ Shared primitives:
 ### Visual system — Matrix operator console, not movie poster
 
 - **Background:** `#050805` with optional faint grid (`globals.css` `body::after`)
-- **Chrome / accents:** dim phosphor green `#3ddc84`; secondary `#0f3322` / `#1e5c3f` — not neon `#00ff6a`
+- **Chrome / accents:** dim phosphor green `#3dcc7a` (locked); secondary `#0f3322` / `#1e5c3f` — not neon `#00ff6a`
 - **Body copy:** off-white `#e8efe9` on dark — **never** long paragraphs in green chrome
 - **Fonts:** IBM Plex Mono (chrome, labels) + IBM Plex Sans (body) via Google Fonts in `index.html`
 - **Panels:** hairline green borders, slight radius (`--radius-panel: 3px`), no glassmorphism, no Bootstrap cards, no emoji-as-design
