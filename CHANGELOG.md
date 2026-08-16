@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
+- Resolved PR #7 against main: Staff four-cluster framing plus role-duty proof (55+ repos, DORA/squads, sharper Nike II / earlier-role outcomes).
 - Raised body/muted contrast (`#f4f7f4` / `#c5d4c8`) and label green (`#5fb37a`); content panels sit on `rgba(5,8,5,0.72)` so rain does not eat glyphs.
 - Enlarged the experience year rail (4.5rem year column, 2px line) so 2025–2016 reads at a glance; Nike II stays the heaviest node.
 - Role-duties Staff copy: site meta, hero themes, signal paragraphs, and Nike III fields aligned to four clusters (lakehouse, GraphQL, AI-tooling analytics, observability).
