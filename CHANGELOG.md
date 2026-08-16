@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
+- Rewrote the experience timeline from verified role duties to show end-to-end platform ownership, AI-tool economics, production reliability, technical leadership, and earlier-role outcomes.
 - Raised body/muted contrast (`#f4f7f4` / `#c5d4c8`) and label green (`#5fb37a`); content panels sit on `rgba(5,8,5,0.72)` so rain does not eat glyphs.
 - Enlarged the experience year rail (4.5rem year column, 2px line) so 2025–2016 reads at a glance; Nike II stays the heaviest node.
 - Staff-scope copy lock: hero, signal, case studies, Nike III fields, and expanded Nike II / earlier-role beats — still sourced from `content.ts`.

@@ -147,36 +147,46 @@ export const experienceContent = {
       title: 'Nike · Software Engineer III, lead engineer, Jeter',
       period: 'Nov 2025 – present',
       leadBeat:
-        'Sets technical direction for Jeter — lakehouse, serving, and the AI analytics that informed company-wide licensing.',
+        'Own Jeter end to end — from 12+ enterprise sources and medallion ETL through APIs, dashboards, executive reporting, and production operations.',
       caseStudyLinks: [
         { label: 'lakehouse migration', href: '#work-lakehouse' },
         { label: 'AI spend lakehouse', href: '#work-ai-coding-spend' },
       ],
       fields: [
         {
-          label: 'direction',
+          label: 'platform ownership',
           value:
-            'Own technical direction across ingestion, lakehouse ETL, multi-store serving, federated GraphQL, and observability. Owned the Glue → Databricks build-vs-buy and decommission plan.',
+            'Set technical direction for a developer-intelligence platform spanning 55+ repositories: ingestion, lakehouse ETL, multi-store serving, federated GraphQL, observability, infrastructure, and customer support.',
         },
         {
-          label: 'ingestion',
+          label: 'lakehouse',
           value:
-            'Architected TB-scale ingestion from 12+ enterprise sources (Lambda → Kinesis Firehose → S3 bronze → Spark silver/gold) into Neptune, DynamoDB, OpenSearch, and Aurora MySQL.',
+            'Architected TB-scale ingestion from Lambda and Kinesis Firehose into S3 bronze and Spark silver/gold. Set the Glue → Databricks direction with Unity Catalog, Delta Lake, Auto Loader, and Delta Sharing so existing consumers stay online.',
         },
         {
-          label: 'observability',
+          label: 'AI economics',
           value:
-            'Designed the unified observability stack across 10+ AppSync subgraphs and Lambda services (X-Ray, Lambda Powertools, CloudWatch, Grafana) against a 99.9% availability SLO.',
+            'Built the production analytics and governance layer for Cursor and GitHub Copilot: adoption, token and model mix, spend reconciliation, budget scenarios, chargeback, and cost controls. A $2.25M analysis across 5,740 users informed company-wide licensing.',
         },
         {
-          label: 'GraphQL',
+          label: 'developer intelligence',
           value:
-            'Shipped a federated GraphQL merged API on AWS AppSync (9 subgraphs) backed by DynamoDB, Neptune, and OpenSearch so teams and agents self-serve.',
+            'Productionized identity resolution, repository ownership, DORA and pull-request metrics, and ML classification for 8,200+ people across six VP domains; Louvain community detection identified roughly 287 squads from collaboration graphs.',
         },
         {
-          label: 'analytics',
+          label: 'serving',
           value:
-            'Productionized reporting for 8,200+ people across six VP domains (k-means + random forest, Louvain, ~287 squads from Jira/GitHub graphs), plus the Cursor/Copilot spend layer.',
+            'Shipped a nine-subgraph AppSync merged API over Neptune, DynamoDB, and OpenSearch, plus Grafana dashboards, executive reports, and a React explorer so teams and AI agents can self-serve.',
+        },
+        {
+          label: 'reliability',
+          value:
+            'Operate the full production path from Step Functions and Spark jobs through graph and reporting stores. Designed unified tracing, logs, dashboards, and Git-provisioned alerts across 10+ subgraphs and Lambda services against a 99.9% availability SLO.',
+        },
+        {
+          label: 'technical leadership',
+          value:
+            'Turn multi-quarter initiatives into phased roadmaps and acceptance criteria, mentor and onboard engineers, review changes across the platform, and build reusable agent runbooks for investigation, delivery, and access workflows.',
         },
       ],
     },
@@ -193,22 +203,22 @@ export const experienceContent = {
         {
           label: 'team',
           value:
-            'Tech-led a team of up to 6 — on-site FTEs, on-site contractors, and remote engineers in Poland and South America. Owned quarterly planning, work split across time zones, and reporting to leadership.',
+            'Tech-led a mixed team of up to six across the US, Poland, and South America. Owned quarterly planning, task breakdown, cross-time-zone delivery, engineering quality, and reporting to leadership.',
         },
         {
           label: 'Referee',
           value:
-            'Designed and built Referee, the standalone UI for Spinnaker Kayenta automated canary analysis (ACA). Canary config, retrospective analysis, and report viewing for ECS and EC2 releases on customer-facing revenue apps.',
+            'Designed and built Referee’s standalone experience for Spinnaker Kayenta automated canary analysis: canary configuration, retrospective analysis, and release reports for ECS and EC2 customer-facing applications.',
         },
         {
           label: 'Cerberus',
           value:
-            'Owned Cerberus, Nike’s Spring Boot secrets service — Safe Deposit Boxes, principal-to-SDB access, versioning and audit. Ran it across AWS Commercial and AWS China, including the initial China rollout.',
+            'Owned Nike’s Spring Boot secrets service across AWS Commercial and AWS China, including the initial China rollout. Delivered secret containers, principal access, versioning, and audit workflows for internal platform teams.',
         },
         {
           label: 'Jeter foundation',
           value:
-            'In 2025, led the foundational Jeter data work: Workday and AD hierarchy, manager-level reporting, and the domain model. That work became the platform I now lead.',
+            'Led the foundational Workday and Active Directory pipelines, cross-source identity and organization models, and manager-level reporting that turned Jeter into the platform I now lead.',
         },
       ],
     },
@@ -218,7 +228,7 @@ export const experienceContent = {
       yearMark: '2019',
       yearEnd: '2020',
       node: 'hollow',
-      line: 'Future State Consulting — Senior Software Engineer · Apr 2019 – Mar 2020 · onsite Nike WHQ · Golden AMIs and platform tooling',
+      line: 'Future State Consulting — Senior Software Engineer · Apr 2019 – Mar 2020 · onsite at Nike WHQ · built hardened Golden AMIs, Debian packages, and platform tooling that standardized secure, observable AWS deployments',
     },
     {
       id: 'beyondsoft',
@@ -226,7 +236,7 @@ export const experienceContent = {
       yearMark: '2016',
       yearEnd: '2019',
       node: 'hollow',
-      line: 'BeyondSoft — Software Engineer · Feb 2016 – Apr 2019 · HP contractor · wireless-stack test automation',
+      line: 'BeyondSoft — Software Engineer · Feb 2016 – Apr 2019 · onsite at HP · built Python automation frameworks and Bluetooth Raspberry Pi services to test the wireless networking stack',
     },
   ] satisfies ExperienceEntry[],
   educationRows: [
