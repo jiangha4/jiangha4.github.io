@@ -22,7 +22,7 @@
 .fold {
   border: var(--border-hairline);
   border-radius: var(--radius-panel);
-  background: rgba(15, 51, 34, 0.15);
+  background: var(--color-panel);
 }
 
 .summary {

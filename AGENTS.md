@@ -70,7 +70,7 @@ Before finishing a change: `npm run lint && npm run build` must pass. CI runs th
 | `Work` | `#work` | Two case-study `TerminalPanel`s + one `ReservedPanel` placeholder |
 | `Signal` | `#signal` | Jeter platform lead story (staff-scope, outcomes-first) |
 | `Stack` | `#stack` | 11-item fold list (`<details>`); no ticker or chip wall |
-| `Experience` | `#experience` | Year rail 2025/2020/2019/2016 (layout C); filled/hollow/heavy nodes; education below rail |
+| `Experience` | `#experience` | Year rail 2025/2020/2019/2016 (layout C); 4.5rem year column / 2px rail; Nike III fields + Nike II heaviest node; education below rail |
 | `Contact` | `#contact` | mailto + external links only |
 | `Footer` | — | Copyright + repo source link |
 
@@ -88,9 +88,11 @@ Shared primitives:
 
 - **Background:** `#050805` with optional faint grid (`globals.css` `body::after`)
 - **Chrome / accents:** dim phosphor green `#3dcc7a` (locked); secondary `#0f3322` / `#1e5c3f` — not neon `#00ff6a`
-- **Body copy:** off-white `#e8efe9` on dark — **never** long paragraphs in green chrome
+- **Body copy:** off-white `#f4f7f4` on dark (`--color-text`); muted `#c5d4c8` — **never** long paragraphs in green chrome
+- **Labels:** `--color-label: #5fb37a` for field `dt`, education heading, and chrome-mid used as labels — do not recast `--color-chrome-mid` (keeps Staff-adjacent chrome)
 - **Fonts:** IBM Plex Mono (chrome, labels) + IBM Plex Sans (body) via Google Fonts in `index.html`
-- **Panels:** hairline green borders, slight radius (`--radius-panel: 3px`), no glassmorphism, no Bootstrap cards, no emoji-as-design
+- **Panels:** hairline green borders, slight radius (`--radius-panel: 3px`), readable surfaces on `--color-panel: rgba(5, 8, 5, 0.72)` so rain does not eat glyphs; no glassmorphism, no Bootstrap cards, no emoji-as-design
+- **Body size:** paragraphs, field `dd`, and leadBeat at least `1rem`
 - **No scanlines overlay**
 
 Use CSS custom properties in `globals.css`; section-specific layout in `*.module.css`. **No** Bootstrap, jQuery, Tailwind CDN, or UI kits.

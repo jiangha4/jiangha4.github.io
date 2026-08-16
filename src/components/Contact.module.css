@@ -23,7 +23,7 @@
   border: var(--border-hairline);
   border-radius: var(--radius-panel);
   padding: 1.5rem;
-  background: rgba(11, 61, 31, 0.08);
+  background: var(--color-panel);
 }
 
 .list {
@@ -44,7 +44,7 @@
 .label {
   font-family: var(--font-mono);
   font-size: 0.7rem;
-  color: var(--color-chrome-mid);
+  color: var(--color-label);
   text-transform: lowercase;
   letter-spacing: 0.08em;
 }

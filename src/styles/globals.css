@@ -3,8 +3,10 @@
   --color-chrome: #3dcc7a;
   --color-chrome-dim: #0f3322;
   --color-chrome-mid: #1e5c3f;
-  --color-text: #e8efe9;
-  --color-text-muted: #a8b5ab;
+  --color-label: #5fb37a;
+  --color-text: #f4f7f4;
+  --color-text-muted: #c5d4c8;
+  --color-panel: rgba(5, 8, 5, 0.72);
   --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
   --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
   --border-hairline: 1px solid var(--color-chrome-mid);
@@ -109,6 +111,7 @@ h2 {
 
 p {
   margin: 0 0 1rem;
+  font-size: 1rem;
 }
 
 p:last-child {

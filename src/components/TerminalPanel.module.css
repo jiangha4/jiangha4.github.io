@@ -2,7 +2,7 @@
   border: var(--border-hairline);
   border-radius: var(--radius-panel);
   padding: 1.25rem 1.5rem;
-  background: rgba(11, 61, 31, 0.12);
+  background: var(--color-panel);
 }
 
 .header {
@@ -51,7 +51,7 @@
 .field dt {
   font-family: var(--font-mono);
   font-size: 0.7rem;
-  color: var(--color-chrome-mid);
+  color: var(--color-label);
   text-transform: lowercase;
   letter-spacing: 0.08em;
   margin-bottom: 0.25rem;
@@ -59,7 +59,7 @@
 
 .field dd {
   margin: 0;
-  font-size: 0.9375rem;
+  font-size: 1rem;
   color: var(--color-text);
   line-height: 1.55;
 }
