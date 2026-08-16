@@ -1,7 +1,7 @@
 export const siteMeta = {
   title: 'David Jiang — Staff Data Platform Engineer',
   description:
-    'Lead engineer on Jeter, Nike’s developer intelligence platform. Sets direction for TB-scale lakehouse ingestion, multi-store serving, and the production AI analytics that informed a $2.25M licensing decision.',
+    'Lead engineer on Jeter, Nike’s developer intelligence platform. Sets direction for the lakehouse, federated GraphQL, AI-tooling analytics, and the observability model behind it.',
   url: 'https://jiangha4.github.io/',
   ogImage: '/img/profile_picture.jpeg',
 };
@@ -18,7 +18,7 @@ export const heroContent = {
   name: 'David Jiang',
   role: 'Staff data platform engineer',
   leadLine: 'lead engineer, Jeter · Nike developer intelligence',
-  themesLine: 'I set direction — lakehouse, serving, $2.25M AI licensing',
+  themesLine: 'lakehouse · GraphQL · AI-tooling analytics · observability',
   actions: [
     { label: 'work', target: 'work' },
     { label: 'contact', target: 'contact' },
@@ -30,8 +30,8 @@ export const signalContent = {
   leadHeading: 'Jeter — developer intelligence platform',
   leadType: 'staff-scope data platform (lead engineer)',
   paragraphs: [
-    'I set technical direction for Jeter: the Glue → Databricks lakehouse move, TB-scale ingestion, multi-store serving, federated GraphQL, and the observability model behind a 99.9% availability SLO.',
-    'Outcomes — production developer intelligence for 8,200+ people across six VP domains; AI coding analytics that informed a $2.25M company-wide licensing decision; downstream consumers stayed online through the migration.',
+    'I set technical direction for Jeter across four jobs: the Glue → Databricks lakehouse, a federated GraphQL API, AI-tooling analytics and governance, and the observability model behind a 99.9% availability SLO.',
+    'Outcomes — production developer intelligence for 8,200+ people across six VP domains; Cursor and Copilot analytics that informed a $2.25M company-wide licensing decision; downstream consumers stayed online through the lakehouse move.',
   ],
 };
 
@@ -147,46 +147,41 @@ export const experienceContent = {
       title: 'Nike · Software Engineer III, lead engineer, Jeter',
       period: 'Nov 2025 – present',
       leadBeat:
-        'Own Jeter end to end — from 12+ enterprise sources and medallion ETL through APIs, dashboards, executive reporting, and production operations.',
+        'Sets technical direction for Jeter — lakehouse, GraphQL, AI-tooling analytics, and observability.',
       caseStudyLinks: [
         { label: 'lakehouse migration', href: '#work-lakehouse' },
         { label: 'AI spend lakehouse', href: '#work-ai-coding-spend' },
       ],
       fields: [
         {
-          label: 'platform ownership',
+          label: 'direction',
           value:
-            'Set technical direction for a developer-intelligence platform spanning 55+ repositories: ingestion, lakehouse ETL, multi-store serving, federated GraphQL, observability, infrastructure, and customer support.',
-        },
-        {
-          label: 'lakehouse',
-          value:
-            'Architected TB-scale ingestion from Lambda and Kinesis Firehose into S3 bronze and Spark silver/gold. Set the Glue → Databricks direction with Unity Catalog, Delta Lake, Auto Loader, and Delta Sharing so existing consumers stay online.',
-        },
-        {
-          label: 'AI economics',
-          value:
-            'Built the production analytics and governance layer for Cursor and GitHub Copilot: adoption, token and model mix, spend reconciliation, budget scenarios, chargeback, and cost controls. A $2.25M analysis across 5,740 users informed company-wide licensing.',
+            'Own the Jeter roadmap and technical direction across 55+ repositories. Mentors engineers and turns multi-quarter initiatives into phased work — not ticket-chasing.',
         },
         {
           label: 'developer intelligence',
           value:
-            'Productionized identity resolution, repository ownership, DORA and pull-request metrics, and ML classification for 8,200+ people across six VP domains; Louvain community detection identified roughly 287 squads from collaboration graphs.',
+            'Shipped identity resolution, repository ownership, DORA and pull-request metrics, and ML classification for 8,200+ people across six VP domains. Louvain community detection identified roughly 287 squads from collaboration graphs.',
         },
         {
-          label: 'serving',
+          label: 'lakehouse',
           value:
-            'Shipped a nine-subgraph AppSync merged API over Neptune, DynamoDB, and OpenSearch, plus Grafana dashboards, executive reports, and a React explorer so teams and AI agents can self-serve.',
+            'Set direction for the Glue → Databricks migration (Unity Catalog, Delta Lake, Auto Loader) and TB-scale medallion ingestion from 12+ enterprise sources into Neptune, DynamoDB, OpenSearch, and Aurora MySQL. Delta Sharing kept every downstream consumer intact.',
         },
         {
-          label: 'reliability',
+          label: 'GraphQL',
           value:
-            'Operate the full production path from Step Functions and Spark jobs through graph and reporting stores. Designed unified tracing, logs, dashboards, and Git-provisioned alerts across 10+ subgraphs and Lambda services against a 99.9% availability SLO.',
+            'Directed the federated GraphQL merged API on AWS AppSync (9 subgraphs over Neptune, DynamoDB, and OpenSearch), plus Grafana dashboards and a React explorer so teams and agents self-serve.',
         },
         {
-          label: 'technical leadership',
+          label: 'AI-tooling analytics',
           value:
-            'Turn multi-quarter initiatives into phased roadmaps and acceptance criteria, mentor and onboard engineers, review changes across the platform, and build reusable agent runbooks for investigation, delivery, and access workflows.',
+            'Own analytics and governance for AI developer tools — Cursor and GitHub Copilot spend, budget modeling, and the executive reporting that informed the $2.25M licensing decision.',
+        },
+        {
+          label: 'observability',
+          value:
+            'Designed the observability model across 10+ AppSync subgraphs and Lambda services (X-Ray, Lambda Powertools, CloudWatch, Grafana) against a 99.9% availability SLO.',
         },
       ],
     },
@@ -208,17 +203,17 @@ export const experienceContent = {
         {
           label: 'Referee',
           value:
-            'Designed and built Referee’s standalone experience for Spinnaker Kayenta automated canary analysis: canary configuration, retrospective analysis, and release reports for ECS and EC2 customer-facing applications.',
+            'Designed and built Referee, the standalone UI for Spinnaker Kayenta automated canary analysis: canary configuration, retrospective analysis, and release reports for ECS and EC2 customer-facing revenue apps.',
         },
         {
           label: 'Cerberus',
           value:
-            'Owned Nike’s Spring Boot secrets service across AWS Commercial and AWS China, including the initial China rollout. Delivered secret containers, principal access, versioning, and audit workflows for internal platform teams.',
+            'Owned Cerberus, Nike’s Spring Boot secrets service, across AWS Commercial and AWS China — including the initial China rollout. Delivered secret containers, principal access, versioning, and audit for internal platform teams.',
         },
         {
           label: 'Jeter foundation',
           value:
-            'Led the foundational Workday and Active Directory pipelines, cross-source identity and organization models, and manager-level reporting that turned Jeter into the platform I now lead.',
+            'In 2025, led the foundational Workday and Active Directory pipelines, cross-source identity and organization models, and manager-level reporting that became the platform I now lead.',
         },
       ],
     },
