@@ -23,7 +23,7 @@
   border: var(--border-hairline);
   border-radius: var(--radius-panel);
   padding: 1.5rem;
-  background: rgba(11, 61, 31, 0.1);
+  background: var(--color-panel);
 }
 
 .jeterHeader {

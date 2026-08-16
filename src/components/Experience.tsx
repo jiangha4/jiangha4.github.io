@@ -24,6 +24,14 @@ function ExperienceEntryContent({ entry }: { entry: ExperienceEntry }) {
             </span>
           ))}
         </p>
+        <dl className={styles.fields}>
+          {entry.fields.map((field) => (
+            <div key={field.label} className={styles.field}>
+              <DecodeLine as="dt">{field.label}</DecodeLine>
+              <DecodeLine as="dd">{field.value}</DecodeLine>
+            </div>
+          ))}
+        </dl>
       </div>
     );
   }
@@ -84,35 +92,37 @@ export function Experience() {
             experience
           </DecodeLine>
 
-          <div className={styles.timelineWrap}>
-            <div className={styles.timelineRows} aria-label="Career timeline 2025 to 2016">
-              <div className={styles.railLine} aria-hidden="true" />
-              {entries.map((entry) => (
-                <div
-                  key={entry.id}
-                  className={`${styles.timelineRow} ${entry.kind === 'nike-ii' ? styles.timelineRowHeavy : ''}`}
-                >
-                  <div className={styles.railCell}>
-                    <RailNode entry={entry} />
-                    <span className={styles.railYear}>{entry.yearMark}</span>
+          <div className={styles.surface}>
+            <div className={styles.timelineWrap}>
+              <div className={styles.timelineRows} aria-label="Career timeline 2025 to 2016">
+                <div className={styles.railLine} aria-hidden="true" />
+                {entries.map((entry) => (
+                  <div
+                    key={entry.id}
+                    className={`${styles.timelineRow} ${entry.kind === 'nike-ii' ? styles.timelineRowHeavy : ''}`}
+                  >
+                    <div className={styles.railCell}>
+                      <RailNode entry={entry} />
+                      <span className={styles.railYear}>{entry.yearMark}</span>
+                    </div>
+                    <div className={styles.rowBody}>
+                      <ExperienceEntryContent entry={entry} />
+                    </div>
                   </div>
-                  <div className={styles.rowBody}>
-                    <ExperienceEntryContent entry={entry} />
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
 
-          <div className={styles.educationBelow}>
-            <DecodeLine as="h3" className={styles.educationHeading}>education</DecodeLine>
-            <ul className={styles.educationList}>
-              {educationRows.map((row) => (
-                <li key={row} className={styles.educationRow}>
-                  <DecodeLine as="span">{row}</DecodeLine>
-                </li>
-              ))}
-            </ul>
+            <div className={styles.educationBelow}>
+              <DecodeLine as="h3" className={styles.educationHeading}>education</DecodeLine>
+              <ul className={styles.educationList}>
+                {educationRows.map((row) => (
+                  <li key={row} className={styles.educationRow}>
+                    <DecodeLine as="span">{row}</DecodeLine>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>

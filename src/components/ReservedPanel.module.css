@@ -2,7 +2,7 @@
   border: var(--border-hairline);
   border-radius: var(--radius-panel);
   padding: 1.25rem 1.5rem;
-  background: rgba(5, 8, 5, 0.6);
+  background: var(--color-panel);
   border-style: dashed;
   border-color: var(--color-chrome-dim);
   min-height: 12rem;
