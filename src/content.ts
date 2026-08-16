@@ -1,7 +1,7 @@
 export const siteMeta = {
   title: 'David Jiang — Staff Data Platform Engineer',
   description:
-    'Lead engineer on Jeter, Nike’s developer intelligence platform. Sets direction for TB-scale lakehouse ingestion, multi-store serving, and the production AI analytics that informed a $2.25M licensing decision.',
+    'Lead engineer on Jeter, Nike’s developer intelligence platform. Sets direction for the lakehouse, federated GraphQL, AI-tooling analytics, and the observability model behind it.',
   url: 'https://jiangha4.github.io/',
   ogImage: '/img/profile_picture.jpeg',
 };
@@ -18,7 +18,7 @@ export const heroContent = {
   name: 'David Jiang',
   role: 'Staff data platform engineer',
   leadLine: 'lead engineer, Jeter · Nike developer intelligence',
-  themesLine: 'I set direction — lakehouse, serving, $2.25M AI licensing',
+  themesLine: 'lakehouse · GraphQL · AI-tooling analytics · observability',
   actions: [
     { label: 'work', target: 'work' },
     { label: 'contact', target: 'contact' },
@@ -30,8 +30,8 @@ export const signalContent = {
   leadHeading: 'Jeter — developer intelligence platform',
   leadType: 'staff-scope data platform (lead engineer)',
   paragraphs: [
-    'I set technical direction for Jeter: the Glue → Databricks lakehouse move, TB-scale ingestion, multi-store serving, federated GraphQL, and the observability model behind a 99.9% availability SLO.',
-    'Outcomes — production developer intelligence for 8,200+ people across six VP domains; AI coding analytics that informed a $2.25M company-wide licensing decision; downstream consumers stayed online through the migration.',
+    'I set technical direction for Jeter across four jobs: the Glue → Databricks lakehouse, a federated GraphQL API, AI-tooling analytics and governance, and the observability model behind a 99.9% availability SLO.',
+    'Outcomes — production developer intelligence for 8,200+ people across six VP domains; Cursor and Copilot analytics that informed a $2.25M company-wide licensing decision; downstream consumers stayed online through the lakehouse move.',
   ],
 };
 
@@ -147,7 +147,7 @@ export const experienceContent = {
       title: 'Nike · Software Engineer III, lead engineer, Jeter',
       period: 'Nov 2025 – present',
       leadBeat:
-        'Sets technical direction for Jeter — lakehouse, serving, and the AI analytics that informed company-wide licensing.',
+        'Sets technical direction for Jeter — lakehouse, GraphQL, AI-tooling analytics, and observability.',
       caseStudyLinks: [
         { label: 'lakehouse migration', href: '#work-lakehouse' },
         { label: 'AI spend lakehouse', href: '#work-ai-coding-spend' },
@@ -156,27 +156,27 @@ export const experienceContent = {
         {
           label: 'direction',
           value:
-            'Own technical direction across ingestion, lakehouse ETL, multi-store serving, federated GraphQL, and observability. Owned the Glue → Databricks build-vs-buy and decommission plan.',
+            'Own the Jeter roadmap and technical direction. Mentors the team and breaks large initiatives into phased work — not ticket-chasing.',
         },
         {
-          label: 'ingestion',
+          label: 'lakehouse',
           value:
-            'Architected TB-scale ingestion from 12+ enterprise sources (Lambda → Kinesis Firehose → S3 bronze → Spark silver/gold) into Neptune, DynamoDB, OpenSearch, and Aurora MySQL.',
-        },
-        {
-          label: 'observability',
-          value:
-            'Designed the unified observability stack across 10+ AppSync subgraphs and Lambda services (X-Ray, Lambda Powertools, CloudWatch, Grafana) against a 99.9% availability SLO.',
+            'Set direction for the Glue → Databricks migration (Unity Catalog, Delta Lake, Auto Loader) and the medallion path from 12+ enterprise sources into Neptune, DynamoDB, OpenSearch, and Aurora MySQL. Delta Sharing kept every downstream consumer intact.',
         },
         {
           label: 'GraphQL',
           value:
-            'Shipped a federated GraphQL merged API on AWS AppSync (9 subgraphs) backed by DynamoDB, Neptune, and OpenSearch so teams and agents self-serve.',
+            'Directed the federated GraphQL merged API on AWS AppSync (9 subgraphs) so teams and agents self-serve operational and business data.',
         },
         {
-          label: 'analytics',
+          label: 'AI-tooling analytics',
           value:
-            'Productionized reporting for 8,200+ people across six VP domains (k-means + random forest, Louvain, ~287 squads from Jira/GitHub graphs), plus the Cursor/Copilot spend layer.',
+            'Own analytics and governance for AI developer tools — Cursor and GitHub Copilot spend, budget modeling, and the executive reporting that informed the $2.25M licensing decision.',
+        },
+        {
+          label: 'observability',
+          value:
+            'Designed the observability model across the GraphQL API and Lambda services (X-Ray, Lambda Powertools, CloudWatch, Grafana) against a 99.9% availability SLO.',
         },
       ],
     },
